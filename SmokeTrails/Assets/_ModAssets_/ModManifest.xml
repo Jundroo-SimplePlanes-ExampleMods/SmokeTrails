@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ModManifest buildID="777ad10e-dc1f-4350-b689-61a23fc981f3">
-  <Mod name="Smoke Trails" author="NathanMikeska" versionMajor="1" versionMinor="0" lastUpdated="9/8/2016 5:34:58 PM" apiVersion="1.0.0.0" description="Adds customizable smoke trails to the game via a smoke trail nozzle part in the gimzos part list.">
+<ModManifest buildID="951e7bb5-b19f-49a8-a4ed-44d62ce57b27">
+  <Mod name="Smoke Trails" author="NathanMikeska" versionMajor="1" versionMinor="0" lastUpdated="9/8/2016 6:59:57 PM" apiVersion="1.0.0.0" description="Adds customizable smoke trails to the game via a smoke trail nozzle part in the gimzos part list.">
     <Steam title="Smoke Trails" visibility="FriendsOnly" previewPath="Assets/Steam/SteamPreview.png" language="English" tags="Parts">
-      <description>Adds customizable smoke trails to the game via a smoke trail nozzle part in the gimzos part list. Smoke trails can be toggled on and off via an activation group. The look and behavior of the trails can be configured via the part properties menu for the smoke trail nozzle in the designer. The color of the smoke trails can be changed via the Trim 1 paint color for the nozzles. Enjoy!</description>
+      <description>Adds customizable smoke trails to the game via a smoke trail nozzle part in the gizmos part list. Smoke trails can be toggled on and off via an activation group. The look and behavior of the trails can be configured via the part properties menu for the smoke trail nozzle in the designer. The color of the smoke trails can be changed via the Trim 1 paint color for the nozzles. Enjoy!
+
+
+Full source code and Unity project are available here:
+https://github.com/Jundroo-SimplePlanes-ExampleMods/SmokeTrails</description>
     </Steam>
     <GameObjects>
       <GameObject name="SmokeTrailNozzle" path="Assets/_ModAssets_/Parts/SmokeTrailNozzle.prefab" />
