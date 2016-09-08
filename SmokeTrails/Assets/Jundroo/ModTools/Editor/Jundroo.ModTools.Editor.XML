@@ -1,0 +1,756 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jundroo.ModTools.Editor</name>
+    </assembly>
+    <members>
+        <member name="T:Jundroo.ModTools.Editor.GameObjectSaveOptions">
+            <summary>
+            Options for saving a game object.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.GameObjectSaveOptions.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Editor.GameObjectSaveOptions"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.GameObjectSaveOptions.AllowLinkedPrefabs">
+            <summary>
+            Gets or sets a value indicating whether linked prefabs are allowed.
+            </summary>
+            <value>
+              <c>true</c> if linked prefabs are allowed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.GameObjectSaveOptions.DoNotSave">
+            <summary>
+            Gets or sets a value indicating whether the object should not be saved.
+            </summary>
+            <value>
+              <c>true</c> if the object should not be saved; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.GameObjectSaveOptions.GameObjectName">
+            <summary>
+            Gets or sets the name of the game object being saved or <c>null</c> to use the default naming convention.
+            </summary>
+            <value>
+            The name of the game object being saved or <c>null</c> to use the default naming convention.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.GameObjectSaveOptions.SavePath">
+            <summary>
+            Gets or sets the save path for the game object prefab or <c>null</c> to use the default path.
+            </summary>
+            <value>
+            The save path for the game object prefab or <c>null</c> to use the default path.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Editor.ModAssembly">
+            <summary>
+            An object representing an assembly to be included in a mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModAssembly.IsProjectAssembly">
+            <summary>
+            A value indicating if this assembly is one of the project's assemblies.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModAssembly.Name">
+            <summary>
+            The name of the assembly.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModAssembly.Path">
+            <summary>
+            The path of the assembly asset.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModAssembly.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Editor.ModAssembly" /> struct.
+            </summary>
+            <param name="name">The name of the assembly.</param>
+            <param name="path">The path of the assembly asset.</param>
+            <param name="isProjectAssembly">A value indicating if this assembly is one of the project's assemblies.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Editor.ModBuilderWindow">
+            <summary>
+            A custom unity editor window used for building mods.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow.AssetBundlesDirectory">
+            <summary>
+            The directory where asset bundles are saved.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._labelHeightWithSpacing">
+            <summary>
+            The height of a single line plus the height of 2 standard vertical spacing.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._plugins">
+            <summary>
+            The list of plugins for the editor window.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._projectDirectory">
+            <summary>
+            The directory of the unity project.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assemblies">
+            <summary>
+            The list of assemblies to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assembliesScrollPosition">
+            <summary>
+            The current scroll position of the assemblies list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assembliesVisible">
+            <summary>
+            The current visibility of the assemblies list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assets">
+            <summary>
+            The list of assets to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assetsScrollPosition">
+            <summary>
+            The current scroll position of the assets list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assetsVisible">
+            <summary>
+            The current visibility of the assets list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._basicInfoSectionVisible">
+            <summary>
+            A value indicating if the basic info section of the mod builder window is currently expanded.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._buildId">
+            <summary>
+            The identifier for the current build.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._currentSaveDirectory">
+            <summary>
+            The current file browser save directory for mods being saved.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._gameObjects">
+            <summary>
+            The list of game objects to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._gameObjectsScrollPosition">
+            <summary>
+            The current scroll position of the game objects list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._gameObjectsVisible">
+            <summary>
+            The current visibility of the game objects list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._ignoredAssemblyNames">
+            <summary>
+            The list of assemblies to ignore when determining which assemblies need to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._isWindowDirty">
+            <summary>
+            A value indicating if the window is dirty (in need of a repainting).
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modAuthor">
+            <summary>
+            The author of the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modDescription">
+            <summary>
+            The description of the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modInWork">
+            <summary>
+            A value indicating whether a mod is currently in work.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modName">
+            <summary>
+            The name of the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modVersionMajor">
+            <summary>
+            The major version number of the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modVersionMinor">
+            <summary>
+            The minor version number of the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._steamDescription">
+            <summary>
+            The description of the mod on the Steam Workshop.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._steamLanguage">
+            <summary>
+            The language for the mod on the Steam Workshop.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._steamPreviewPath">
+            <summary>
+            The path to the preview image used on the Steam Workshop.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._steamSectionVisible">
+            <summary>
+            A value indicating if the Steam section of the mod builder window is currently expanded.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._steamTags">
+            <summary>
+            The comma separated list of tags for the mod on the Steam Workshop.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._steamTitle">
+            <summary>
+            The title of the mod on the Steam Workshop.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._steamVisibility">
+            <summary>
+            The visibility of the mod on the Steam Workshop.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Editor.ModBuilderWindow"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindow.ModName">
+            <summary>
+            Gets the name of the mod.
+            </summary>
+            <value>
+            The name of the mod.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ShowWindow">
+            <summary>
+            Shows the mod builder window.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.GetModAssemblies">
+            <summary>
+            Gets the assemblies to be included in the mod.
+            </summary>
+            <returns>The assemblies to be included in the mod.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.GetModAssets">
+            <summary>
+            Gets the assets to be included in the mod.
+            </summary>
+            <returns>The assets to be included in the mod.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.GetModGameObjects">
+            <summary>
+            Gets the game objects to be included in the mod.
+            </summary>
+            <returns>The game objects to be included in the mod.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveAsset(System.String)">
+            <summary>
+            Saves the asset at the specified path. (i.e. track it as an asset to be included in the mod)
+            </summary>
+            <param name="assetPath">The path of the asset to save.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SetWindowDirty">
+            <summary>
+            Flags the window as dirty and in need of a repainting.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.AddIgnoredAssembly(System.Reflection.Assembly)">
+            <summary>
+            Adds the specified assembly to the ignored assembly list.
+            </summary>
+            <param name="assembly">The assembly to ignore.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.GetPlugins">
+            <summary>
+            Gets the plugins for the mod builder window.
+            </summary>
+            <returns>The list of plugins that were found.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.GetPrefabDependencies(UnityEngine.GameObject)">
+            <summary>
+            Gets the prefab dependencies of the specified object.
+            </summary>
+            <param name="obj">The object for which to get prefab dependencies.</param>
+            <returns>The asset paths of dependent prefabs.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.GetPrefabDependencies(UnityEngine.GameObject,System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the prefab dependencies of the specified object.
+            </summary>
+            <param name="obj">The object for which to get prefab dependencies.</param>
+            <param name="prefabPaths">The list of asset paths of dependent prefabs.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.CleanModAssetsFolder">
+            <summary>
+            Cleans the mod assets folder deleting all the files.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.CompleteAndSaveMod(Jundroo.ModTools.Core.ModTargetPlatform)">
+            <summary>
+            Completes the mod and saves it to a location chosen by the user.
+            </summary>
+            <param name="targetPlatform">The target platform for the mod.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ExtractAssembliesFromApk(System.String,System.String)">
+            <summary>
+            Extracts the project assemblies from the specified APK.
+            </summary>
+            <param name="apkPath">The APK path.</param>
+            <param name="targetDirectory">The target directory to which to extract assemblies.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.Initialize">
+            <summary>
+            Initializes the window.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.IsSaveSelectedAssetsEnabled">
+            <summary>
+            Determines whether the 'save selected assets' button is enabled.
+            </summary>
+            <returns><c>true</c> if the button is enabled, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.IsSaveSelectedSceneObjectsEnabled">
+            <summary>
+            Determines whether the 'save selected objects' button is enabled.
+            </summary>
+            <returns><c>true</c> if the button is enabled, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.OnEnable">
+            <summary>
+            Called when the window is enabled.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.OnGUI">
+            <summary>
+            Called when the GUI updates.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.OnInspectorUpdate">
+            <summary>
+            Called when the inspector updates (10 times a second).
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.OnSelectionChange">
+            <summary>
+            Called when the selection changes.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ReadManifestFile">
+            <summary>
+            Reads current state of the mod from the mod manifest file.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ResetAll">
+            <summary>
+            Resets everything and starts over.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveAssembly(System.String,System.Byte[])">
+            <summary>
+            Saves the assembly (including the header) to the specified path and refreshes the asset database.
+            </summary>
+            <param name="targetPath">The target path.</param>
+            <param name="assemblyBytes">The assembly bytes.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveAssetAssembly(System.String)">
+            <summary>
+            Saves the assembly asset at the specified path indicating it should be included in the mod.
+            </summary>
+            <param name="assemblyAssetPath">The asset path of the assembly to save.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveAssets(System.Collections.Generic.IEnumerable{UnityEngine.GameObject})">
+            <summary>
+            Saves all assets associated with the specified game objects.
+            </summary>
+            <param name="gameObjects">The game objects for which to save all assets.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveGameObject(UnityEngine.GameObject,System.String,System.Boolean)">
+            <summary>
+            Saves the specified game object, including it in the mod.
+            </summary>
+            <param name="gameObject">The game object to be saved.</param>
+            <param name="path">The path at which to save the game object.</param>
+            <param name="allowLinkedPrefabs">If set to <c>true</c> linked prefabs are allowed.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveProjectAssemblies(System.String)">
+            <summary>
+            Saves the project assemblies.
+            </summary>
+            <param name="directory">The directory in which to find the project assemblies.
+            If set to <c>null</c>, project assemblies will be pulled from the editor's assembly directory.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveProjectAssembly(System.IO.FileInfo)">
+            <summary>
+            Saves the specified project assembly.
+            </summary>
+            <param name="assemblyFile">The assembly file to save.</param>
+            <returns>
+            The mod assembly object representing the saved assembly.
+            If the assembly could not or should not be saved, this will be <c>null</c>.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveSelectedAssets">
+            <summary>
+            Saves the selected assets, indicating that they should be included in the mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveSelectedSceneObjects">
+            <summary>
+            Saves the selected scene objects, including them in the mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SortModAssemblies">
+            <summary>
+            Sorts the mod assemblies in the order in which they should be loaded.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.StartCreatingMod">
+            <summary>
+            Called when the user starts creating a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ValidateAuthorName">
+            <summary>
+            Validates the name of the mod author.
+            </summary>
+            <returns><c>true</c> if valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ValidateModName">
+            <summary>
+            Validates the name of the mod.
+            </summary>
+            <returns><c>true</c> if valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ValidateSteamInfo">
+            <summary>
+            Validates the Steam Workshop information for the mod.
+            </summary>
+            <returns><c>true</c> if valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ValidateVersionNumber">
+            <summary>
+            Validates the version number of the mod.
+            </summary>
+            <returns><c>true</c> if valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.WriteManifestFile">
+            <summary>
+            Writes the mod manifest file with the current state of the mod.
+            </summary>
+        </member>
+        <member name="T:Jundroo.ModTools.Editor.ModBuilderWindow.CustomAssemblyResolver">
+            <summary>
+            A custom assembly resolver for mono.cecil.
+            </summary>
+            <seealso cref="T:Mono.Cecil.DefaultAssemblyResolver" />
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.CustomAssemblyResolver.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Editor.ModBuilderWindow.CustomAssemblyResolver"/> class.
+            </summary>
+        </member>
+        <member name="T:Jundroo.ModTools.Editor.ModBuilderWindowPlugin">
+            <summary>
+            A base class for mod builder window plugins.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindowPlugin._window">
+            <summary>
+            The mod builder window.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.AdditionalAssets">
+            <summary>
+            Gets the additional assets to be included in the mod. This is a list of asset paths to be included in the mod's asset bundle.
+            </summary>
+            <value>
+            The additional assets to be included in the mod. This is a list of asset paths to be included in the mod's asset bundle.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.AssembliesToIgnore">
+            <summary>
+            Gets the assemblies to ignore when determining which assemblies need to be saved in the mod.
+            </summary>
+            <value>
+            The assemblies to ignore when determining which assemblies need to be saved in the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.ManifestSectionName">
+            <summary>
+            Gets the name of the manifest section associated with this plugin.
+            </summary>
+            <value>
+            The name of the manifest section associated with this plugin.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.ModFileExtensionAndroid">
+            <summary>
+            Gets the mod file extension for the android player (excluding the '.').
+            </summary>
+            <value>
+            The mod file extension for the android player (excluding the '.').
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.ModFileExtensionStandalone">
+            <summary>
+            Gets the mod file extension for the standalone player (excluding the '.').
+            </summary>
+            <value>
+            The mod file extension for the standalone player (excluding the '.').
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.ModName">
+            <summary>
+            Gets the name of the mod.
+            </summary>
+            <value>
+            The name of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.WindowTitle">
+            <summary>
+            Gets the window title.
+            </summary>
+            <value>
+            The window title.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.ManifestNeedsUpdated">
+            <summary>
+            Gets or sets a value indicating whether the mod manifest needs updated.
+            </summary>
+            <value>
+            <c>true</c> if the mod manifest needs updated; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.GetApiVersion">
+            <summary>
+            Gets the API version number for the plugin.
+            </summary>
+            <returns>The API version number for the plugin.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.GetSaveOptions(UnityEngine.GameObject)">
+            <summary>
+            Gets the save options for the specified game object or <c>null</c> if no specific options are needed.
+            </summary>
+            <param name="gameObject">The game object to save.</param>
+            <returns>The game object save options or <c>null</c> if no specific options are needed.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.Initialize">
+            <summary>
+            Initializes the plugin.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.LoadManifestData(System.Xml.Linq.XElement)">
+            <summary>
+            Loads the mod manifest data for the specified section associated with this plugin.
+            </summary>
+            <param name="manifestSection">The mod manifest section for this plugin.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnBeforeGameObjectSaved(UnityEngine.GameObject)">
+            <summary>
+            Called when a game object is about to be saved.
+            </summary>
+            <param name="prefabToSave">The prefab that is about to be saved.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnCompleteAndSaveStarted">
+            <summary>
+            Called when the user starts the process to complete and save the mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnGameObjectRemoved(Jundroo.ModTools.Editor.ModGameObject)">
+            <summary>
+            Called when a game object is removed from the list of saved game objects.
+            </summary>
+            <param name="gameObject">The game object being removed.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnGameObjectSaved(UnityEngine.GameObject)">
+            <summary>
+            Called when a game object is saved.
+            </summary>
+            <param name="savedPrefab">The prefab that was just saved.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnGUI_BeforeAssembliesList">
+            <summary>
+            Called during OnGUI before the assembly list is output.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnGUI_BeforeAssetsList">
+            <summary>
+            Called during OnGUI before the asset list is output.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnGUI_BeforeGameObjectList">
+            <summary>
+            Called during OnGUI before the game object list is output.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnGUI_End">
+            <summary>
+            Called at the end of OnGUI.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnInitializeComplete">
+            <summary>
+            Called when initialization is complete.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnModStarted(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Called when a mod is started.
+            </summary>
+            <param name="modName">The name of the mod.</param>
+            <param name="modAuthor">The mod author.</param>
+            <param name="modVersionMajor">The mod major version number.</param>
+            <param name="modVersionMinor">The mod minor version number.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnRestAll">
+            <summary>
+            Called when the user resets everything.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.SaveManifestData(System.Xml.Linq.XElement)">
+            <summary>
+            Saves the mod manifest data to the specified xml element.
+            </summary>
+            <param name="manifestSection">The mod manifest section associated with this plugin.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.SaveMod(System.String,System.String,Jundroo.ModTools.Core.ModTargetPlatform)">
+            <summary>
+            Give the plugin a chance to save the mod.
+            Returns <c>true</c> if the mod was saved, <c>false</c> otherwise.
+            </summary>
+            <param name="assetBundlePath">The asset bundle path.</param>
+            <param name="targetPath">The target path.</param>
+            <param name="targetPlatform">The target platform of the mod.</param>
+            <returns><c>true</c> if the mod was saved, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.ShouldSaveGameObject(UnityEngine.GameObject)">
+            <summary>
+            Determines if the specified game object that the user is attempting to save should actually be saved.
+            </summary>
+            <param name="gameObject">The game object to be saved.</param>
+            <returns><c>true</c> if the game object should be saved, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.UpdateManifest">
+            <summary>
+            Called to indicate that the mod manifest file needs updated.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.Initialize(Jundroo.ModTools.Editor.ModBuilderWindow)">
+            <summary>
+            Initializes the plugin.
+            </summary>
+            <param name="window">The mod builder window.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.GetModAssemblies">
+            <summary>
+            Gets the assemblies currently selected to be saved by the mod.
+            </summary>
+            <returns>The assemblies currently selected to be saved by the mod.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.GetModAssets">
+            <summary>
+            Gets the assets currently selected to be saved by the mod.
+            </summary>
+            <returns>The assets currently selected to be saved by the mod.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.GetModGameObjects">
+            <summary>
+            Gets the game objects currently selected to be saved by the mod.
+            </summary>
+            <returns>The game objects currently selected to be saved by the mod.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.SaveAsset(System.String)">
+            <summary>
+            Informs the mod builder window that the specified asset needs to be saved in the mod.
+            </summary>
+            <param name="assetPath">The path of the asset to be saved.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.SetWindowDirty">
+            <summary>
+            This is called to flag the mod builder window as 'dirty' and in need of a repainting.
+            </summary>
+        </member>
+        <member name="T:Jundroo.ModTools.Editor.ModGameObject">
+            <summary>
+            An object representing a game object to be included in a mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModGameObject.Name">
+            <summary>
+            The name of the game object.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModGameObject.Path">
+            <summary>
+            The asset path of the game object.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModGameObject.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Editor.ModGameObject"/> struct.
+            </summary>
+            <param name="name">The name of the game object.</param>
+            <param name="path">The asset path of the game object.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Editor.ProjectAssemblies">
+            <summary>
+            A utility class for functionality related to the project assemblies.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ProjectAssemblies.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.ModTools.Editor.ProjectAssemblies"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.ProjectAssemblies.ProjectAssemblyNames">
+            <summary>
+            Gets the list of project assembly names and the order in which they should be loaded.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ProjectAssemblies.GetTypes``1(System.Boolean)">
+            <summary>
+            Gets the requested types from the loaded project assemblies.
+            </summary>
+            <typeparam name="T">The type of the types to retrieve</typeparam>
+            <param name="includeAbstractTypesAndInterfaces">If set to <c>true</c> abstract types and interfaces will be included in the results.</param>
+            <returns>The list of requested types.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ProjectAssemblies.GetTypes(System.Type,System.Boolean)">
+            <summary>
+            Gets the requested types from the loaded project assemblies.
+            </summary>
+            <param name="requestedType">The type of the types to retrieve</param>
+            <param name="includeAbstractTypesAndInterfaces">If set to <c>true</c> abstract types and interfaces will be included in the results.</param>
+            <returns>The list of requested types.</returns>
+        </member>
+    </members>
+</doc>

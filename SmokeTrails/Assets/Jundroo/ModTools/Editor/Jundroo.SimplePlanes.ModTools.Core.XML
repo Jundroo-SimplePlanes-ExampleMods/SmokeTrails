@@ -1,0 +1,669 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jundroo.SimplePlanes.ModTools.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.FileExtensions">
+            <summary>
+            A collection of constants.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Core.FileExtensions.ModFileExtensionAndroid">
+            <summary>
+            The mod file extension for android players.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Core.FileExtensions.ModFileExtensionStandalone">
+            <summary>
+            The mod file extension for standalone players.
+            </summary>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.DesignerPluginInfo">
+            <summary>
+            An object containing information about a designer plugin included in a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.DesignerPluginInfo.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.DesignerPluginInfo"/> struct.
+            </summary>
+            <param name="name">The name of the object.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.DesignerPluginInfo.Name">
+            <summary>
+            Gets or sets the name of the object.
+            </summary>
+            <value>
+            The name of the object.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.Events.ModLoadedEventArgs">
+            <summary>
+            Event args for an event that fires when a mod has been loaded.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.Events.ModLoadedEventArgs.#ctor(Jundroo.ModTools.Core.LoadedMod,Jundroo.SimplePlanes.ModTools.Core.ModManifestData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.Events.ModLoadedEventArgs"/> class.
+            </summary>
+            <param name="mod">The mod that was loaded.</param>
+            <param name="manifestData">The mod manifest data for the mod that was loaded.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.Events.ModLoadedEventArgs.ManifestData">
+            <summary>
+            Gets the mod manifest data for the mod that was loaded.
+            </summary>
+            <value>
+            The mod manifest data for the mod that was loaded.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.Events.ModLoadedEventArgs.Mod">
+            <summary>
+            Gets the mod that was loaded.
+            </summary>
+            <value>
+            The mode that was loaded.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.MapPluginInfo">
+            <summary>
+            An object containing information about a map plugin included in a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.MapPluginInfo.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.MapPluginInfo" /> struct.
+            </summary>
+            <param name="name">The name of the object.</param>
+            <param name="supportedMapNames">The list of maps supported by this plugin.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.MapPluginInfo.Name">
+            <summary>
+            Gets or sets the name of the object.
+            </summary>
+            <value>
+            The name of the object.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.MapPluginInfo.SupportedMapNames">
+            <summary>
+            Gets or sets list of maps supported by this plugin.
+            </summary>
+            <value>
+            The list of maps supported by this plugin.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo">
+            <summary>
+            An object representing a custom level included in a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo.#ctor(System.String,System.String,System.String,System.String,Jundroo.SimplePlanes.ModTools.LevelSupportedPlatforms)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo"/> struct.
+            </summary>
+            <param name="name">The name of the level.</param>
+            <param name="description">The description of the level.</param>
+            <param name="mapName">The name of the map for the level.</param>
+            <param name="levelTypeName">The full type name of the level class.</param>
+            <param name="supportedPlaform">The platforms that support the level.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo.#ctor(System.String,System.String,System.String,System.String,Jundroo.SimplePlanes.ModTools.LevelSupportedPlatforms,Jundroo.ModTools.Core.ModInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo" /> struct.
+            </summary>
+            <param name="name">The name of the level.</param>
+            <param name="description">The description of the level.</param>
+            <param name="mapName">The name of the map for the level.</param>
+            <param name="levelTypeName">The full type name of the level class.</param>
+            <param name="supportedPlaform">The platforms that support the level.</param>
+            <param name="mod">The mod associated with the level.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo.Description">
+            <summary>
+            Gets or sets the description of the level.
+            </summary>
+            <value>
+            The description of the level.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo.LevelTypeName">
+            <summary>
+            Gets or sets the full type name of the level class.
+            </summary>
+            <value>
+            The full type name of the level class.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo.MapName">
+            <summary>
+            Gets or sets the name of the map for the level.
+            </summary>
+            <value>
+            The name of the map for the level.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo.Mod">
+            <summary>
+            Gets or sets the mod associated with the level.
+            </summary>
+            <value>
+            The mod associated with the level (always <c>null</c> when building mods in the editor).
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo.Name">
+            <summary>
+            Gets or sets the name of the level.
+            </summary>
+            <value>
+            The name of the level.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo.SupportedPlatform">
+            <summary>
+            Gets the supported platform(s) for the level.
+            </summary>
+            <value>
+            The supported platform(s) for the level.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.ModManifestData">
+            <summary>
+            A class representing the manifest data for a SimplePlanes mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManifestData.#ctor(Jundroo.ModTools.Core.ModInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.ModManifestData"/> class.
+            </summary>
+            <param name="modInfo">The mod information.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManifestData.DesignerPlugins">
+            <summary>
+            Gets or sets the designer plugins included in the mod.
+            </summary>
+            <value>
+            The designer plugins included in the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManifestData.Levels">
+            <summary>
+            Gets or sets the levels included in the mod.
+            </summary>
+            <value>
+            The levels included in the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManifestData.MapPlugins">
+            <summary>
+            Gets or sets the map plugins included in the mod.
+            </summary>
+            <value>
+            The map plugins included in the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManifestData.Maps">
+            <summary>
+            Gets or sets the maps included in the mod.
+            </summary>
+            <value>
+            The maps included in the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManifestData.ModInfo">
+            <summary>
+            Gets or sets the mod information.
+            </summary>
+            <value>
+            The mod information.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManifestData.Parts">
+            <summary>
+            Gets or sets the parts included in the mod.
+            </summary>
+            <value>
+            The parts included in the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManifestData.PersistentGameObjects">
+            <summary>
+            Gets or sets the persistent objects included in the mod.
+            </summary>
+            <value>
+            The persistent objects included in the mod.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.MapInfo">
+            <summary>
+            An object representing a custom map included in a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.MapInfo.#ctor(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.MapInfo"/> struct.
+            </summary>
+            <param name="name">The name of the map.</param>
+            <param name="description">The description of the map.</param>
+            <param name="prefabPath">The prefab path of the map.</param>
+            <param name="allowSandbox">If set to <c>true</c> the map is allowed in sandbox mode.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.MapInfo.#ctor(System.String,System.String,System.String,System.Boolean,Jundroo.ModTools.Core.ModInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.MapInfo"/> struct.
+            </summary>
+            <param name="name">The name of the map.</param>
+            <param name="description">The description of the map.</param>
+            <param name="prefabPath">The prefab path of the map.</param>
+            <param name="allowSandbox">If set to <c>true</c> the map is allowed in sandbox mode.</param>
+            <param name="mod">The mod associated with the map.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.MapInfo.AllowSandbox">
+            <summary>
+            Gets or sets a value indicating whether the map is allowed in sandbox mod.
+            </summary>
+            <value>
+              <c>true</c> if the map is allowed in sandbox mode; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.MapInfo.Description">
+            <summary>
+            Gets or sets the description of the map.
+            </summary>
+            <value>
+            The description of the map.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.MapInfo.Mod">
+            <summary>
+            Gets or sets the mod associated with the map.
+            </summary>
+            <value>
+            The mod associated with the map (always <c>null</c> when building mods in the editor).
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.MapInfo.Name">
+            <summary>
+            Gets or sets the name of the map.
+            </summary>
+            <value>
+            The name of the map.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.MapInfo.PrefabPath">
+            <summary>
+            Gets or sets the prefab path of the map.
+            </summary>
+            <value>
+            The prefab path of the map.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.IModManager">
+            <summary>
+            An interface for interacting with the SimplePlanes mod manager.
+            </summary>
+        </member>
+        <member name="E:Jundroo.SimplePlanes.ModTools.Core.IModManager.ModLoaded">
+            <summary>
+            Occurs when a mod is loaded.
+            </summary>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.IModManager.AllMaps">
+            <summary>
+            Gets all the maps included in all the loaded mods.
+            </summary>
+            <value>
+            All the maps included in all the loaded mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.IModManager.Levels">
+            <summary>
+            Gets all the levels included in all the loaded mods.
+            </summary>
+            <value>
+            All the levels included in all the loaded mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.IModManager.Parts">
+            <summary>
+            Gets the collection of parts in all loaded mods.
+            </summary>
+            <value>
+            The collection of parts in all loaded mods
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.IModManager.SandboxMaps">
+            <summary>
+            Gets all the sandbox maps included in all the loaded mods.
+            </summary>
+            <value>
+            All the sandbox maps included in all the loaded mods.
+            </value>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.IModManager.GetModLevelInfo(System.String,System.String)">
+            <summary>
+            Gets the mod level information for the specified level.
+            </summary>
+            <param name="modName">Name of the mod.</param>
+            <param name="levelName">Name of the level.</param>
+            <returns>The mod level information</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.IModManager.GetModMapInfo(System.String,System.String)">
+            <summary>
+            Gets the mod map information for the specified map.
+            </summary>
+            <param name="modName">Name of the mod.</param>
+            <param name="mapName">Name of the map.</param>
+            <returns>The mod map information.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.IModManager.LoadDesignerPlugins">
+            <summary>
+            Loads all the designer plugins.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.IModManager.LoadLevel(Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo)">
+            <summary>
+            Loads the specified level.
+            </summary>
+            <param name="level">The level to load.</param>
+            <returns>The instance of the specified level.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.IModManager.LoadMap(Jundroo.SimplePlanes.ModTools.Core.MapInfo)">
+            <summary>
+            Loads the specified map.
+            </summary>
+            <param name="map">The map to load.</param>
+            <returns>The root game object of the map.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.IModManager.LoadMapPlugins(System.String)">
+            <summary>
+            Loads all the map plugins for the specified map.
+            </summary>
+            <param name="mapName">The name of the map for which to load plugins.</param>
+            <returns>The list of loaded map plugin game objects.</returns>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.ModManager">
+            <summary>
+            The mod manager for SimplePlanes.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Core.ModManager.ModManifestSectionName">
+            <summary>
+            The mod manifest section name for SimplePlanes.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Core.ModManager._ModManager">
+            <summary>
+            The generic mod manager instance.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Core.ModManager._mods">
+            <summary>
+            The list of loaded mods.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.ModManager"/> class from being created.
+            </summary>
+        </member>
+        <member name="E:Jundroo.SimplePlanes.ModTools.Core.ModManager.ModLoaded">
+            <summary>
+            Occurs when a mod is loaded.
+            </summary>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.CompressedModByteHeader">
+            <summary>
+            Gets the byte header for a compressed mod file.
+            </summary>
+            <value>
+            The byte header for a compressed mod file.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.Instance">
+            <summary>
+            Gets the singleton instance.
+            </summary>
+            <value>
+            The singleton instance.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.AllMaps">
+            <summary>
+            Gets all the maps included in all the loaded mods.
+            </summary>
+            <value>
+            All the maps included in all the loaded mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.Levels">
+            <summary>
+            Gets all the levels included in all the loaded mods.
+            </summary>
+            <value>
+            All the levels included in all the loaded mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.Parts">
+            <summary>
+            Gets the collection of parts in all loaded mods.
+            </summary>
+            <value>
+            The collection of parts in all loaded mods
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.SandboxMaps">
+            <summary>
+            Gets all the sandbox maps included in all the loaded mods.
+            </summary>
+            <value>
+            All the sandbox maps included in all the loaded mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.ModFileExtensionAndroid">
+            <summary>
+            Gets the mod file extension for the android player (excluding the '.').
+            </summary>
+            <value>
+            The mod file extension for the android player (excluding the '.').
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.ModFileExtensionStandalone">
+            <summary>
+            Gets the mod file extension for the standalone player (excluding the '.').
+            </summary>
+            <value>
+            The mod file extension for the standalone player (excluding the '.').
+            </value>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.DecompressMod(System.String)">
+            <summary>
+            Decompresses the mod at the specified path.
+            </summary>
+            <param name="modPath">The path of the mod to decompress.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.DecompressMods(System.String,System.Boolean)">
+            <summary>
+            Decompresses any compressed mod files in the specified directory.
+            </summary>
+            <param name="directory">The directory in which to find mods to decompress.</param>
+            <param name="recursive">If set to <c>true</c> the directory will be recursively scanned.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.GetModLevelInfo(System.String,System.String)">
+            <summary>
+            Gets the mod level information for the specified level.
+            </summary>
+            <param name="modName">Name of the mod.</param>
+            <param name="levelName">Name of the level.</param>
+            <returns>
+            The mod level information
+            </returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.GetModMapInfo(System.String,System.String)">
+            <summary>
+            Gets the mod map information for the specified map.
+            </summary>
+            <param name="modName">Name of the mod.</param>
+            <param name="mapName">Name of the map.</param>
+            <returns>
+            The mod map information.
+            </returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadDesignerPlugins">
+            <summary>
+            Loads all the designer plugins.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadLevel(Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo)">
+            <summary>
+            Loads the specified level.
+            </summary>
+            <param name="level">The level to load.</param>
+            <returns>
+            The instance of the specified level.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the mod or level type could not be found.</exception>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadMap(Jundroo.SimplePlanes.ModTools.Core.MapInfo)">
+            <summary>
+            Loads the specified map.
+            </summary>
+            <param name="map">The map to load.</param>
+            <returns>
+            The root game object of the map.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the mod could not be found.</exception>
+            <exception cref="T:Jundroo.ModTools.Exceptions.AssetNotFoundException">Thrown if the map game object could not be found.</exception>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadMapPlugins(System.String)">
+            <summary>
+            Loads all the map plugins for the specified map.
+            </summary>
+            <param name="mapName">The name of the map for which to load plugins.</param>
+            <returns>The list of loaded map plugin game objects.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.AssemblyResolve(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Handles the assembly resolve event for the app domain, looking for the assembly in the list of assemblies loaded from mods.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.ResolveEventArgs" /> instance containing the event data.</param>
+            <returns>
+            The requested assembly if found, otherwise <c>null</c>.
+            </returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.OnModLoaded(Jundroo.ModTools.Core.LoadedMod,Jundroo.ModTools.Core.ModManifest)">
+            <summary>
+            Called when a mod is loaded.
+            </summary>
+            <param name="mod">The mod that was loaded.</param>
+            <param name="manifest">The mod manifest of the mod that was loaded.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.VerifyApiVersions(Jundroo.ModTools.Core.ModInfo,Jundroo.ModTools.Core.ModManifest)">
+            <summary>
+            Verifies the current API versions match the API version that the mod was created with.
+            </summary>
+            <param name="mod">The mod.</param>
+            <param name="modManifest">The mod manifest.</param>
+            <returns><c>true</c> if API versions match; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.InitializeDefaultServiceProviders">
+            <summary>
+            Initializes the default service providers.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.ReadModManifest(Jundroo.ModTools.Core.ModInfo,Jundroo.ModTools.Core.ModManifest)">
+            <summary>
+            Reads the mod manifest.
+            </summary>
+            <param name="modInfo">The mod information.</param>
+            <param name="manifest">The mod manifest.</param>
+            <returns>An object containing the data read from the mod manifest.</returns>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadedModData">
+            <summary>
+            A class containing information about a loaded mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadedModData.#ctor(Jundroo.ModTools.Core.LoadedMod,Jundroo.SimplePlanes.ModTools.Core.ModManifestData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadedModData"/> class.
+            </summary>
+            <param name="mod">The mod.</param>
+            <param name="manifestData">The mod manifest data.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadedModData.ManifestData">
+            <summary>
+            Gets the mod manifest data.
+            </summary>
+            <value>
+            The mod manifest data.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadedModData.Mod">
+            <summary>
+            Gets the mod.
+            </summary>
+            <value>
+            The mod.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.ModPartInfo">
+            <summary>
+            An object representing a custom part included in a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModPartInfo.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.ModPartInfo" /> struct.
+            </summary>
+            <param name="name">The name of the part.</param>
+            <param name="prefabPath">The path to the prefab associated with the part.</param>
+            <param name="xmlPath">The path for the XML defining the part.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModPartInfo.Name">
+            <summary>
+            Gets the name of the part.
+            </summary>
+            <value>
+            The name of the part.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModPartInfo.PrefabPath">
+            <summary>
+            Gets the path to the prefab associated with the part.
+            </summary>
+            <value>
+            The path to the prefab associated with the part.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModPartInfo.XmlPath">
+            <summary>
+            Gets the path for the XML defining the part.
+            </summary>
+            <value>
+            The path for the XML defining the part.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Core.PersistentObjectInfo">
+            <summary>
+            An object containing information about a persistent object included in a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.PersistentObjectInfo.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Core.PersistentObjectInfo"/> struct.
+            </summary>
+            <param name="name">The name of the object.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Core.PersistentObjectInfo.Name">
+            <summary>
+            Gets or sets the name of the object.
+            </summary>
+            <value>
+            The name of the object.
+            </value>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1034 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jundroo.SimplePlanes.ModTools.Editor</name>
+    </assembly>
+    <members>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog">
+            <summary>
+            A editor window dialog for creating a new level script.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog._projectDirectory">
+            <summary>
+            The directory of the unity project.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog._levelDescription">
+            <summary>
+            The level description.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog._levelMapName">
+            <summary>
+            The level map name.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog._levelName">
+            <summary>
+            The level name.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog._levelScriptName">
+            <summary>
+            The level script name.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog.ShowCreateLevelScriptDialog">
+            <summary>
+            Shows the create level script dialog.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog.OnGUI">
+            <summary>
+            Called when the GUI is drawn.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.CreateLevelScriptDialog.OnSave">
+            <summary>
+            Called when the user attempts to save the level.
+            </summary>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption">
+            <summary>
+            A collection of editor list option flags.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption.None">
+            <summary>
+            No options.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption.ListSize">
+            <summary>
+            The list size will be shown.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption.ListLabel">
+            <summary>
+            The list label will be shown.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption.ElementLabels">
+            <summary>
+            The element labels will be shown.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption.Buttons">
+            <summary>
+            The buttons will be shown.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption.AddDeleteButtonsOnly">
+            <summary>
+            Only the add and delete button will be shown.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption.Default">
+            <summary>
+            The default set of options.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption.NoElementLabels">
+            <summary>
+            The default options for showing no element labels.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorListOption.All">
+            <summary>
+            All default options enabled.
+            </summary>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.EditorList">
+            <summary>
+            A class used for displaying custom lists in the editor.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorList.addButtonContent">
+            <summary>
+            The add button content.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorList.addButtonWidth">
+            <summary>
+            The add button width.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorList.deleteButtonContent">
+            <summary>
+            The delete button content.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorList.duplicateButtonContent">
+            <summary>
+            The duplicate button content.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorList.miniButtonWidth">
+            <summary>
+            The mini button width.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.EditorList.moveButtonContent">
+            <summary>
+            The move button content.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.EditorList.Show(UnityEditor.SerializedProperty,Jundroo.SimplePlanes.ModTools.Editor.EditorListOption)">
+            <summary>
+            Shows the specified list.
+            </summary>
+            <param name="list">The list to show.</param>
+            <param name="options">The options for the list being shown.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.EditorList.ShowAddButton(UnityEditor.SerializedProperty)">
+            <summary>
+            Shows the add button.
+            </summary>
+            <param name="list">The list being displayed.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.EditorList.ShowButtons(UnityEditor.SerializedProperty,System.Int32)">
+            <summary>
+            Shows the buttons for the list.
+            </summary>
+            <param name="list">The list being displayed.</param>
+            <param name="index">The index of the item in the list for which the buttons are to be displayed.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.EditorList.ShowDeleteButton(UnityEditor.SerializedProperty,System.Int32)">
+            <summary>
+            Shows the delete button.
+            </summary>
+            <param name="list">The list being displayed.</param>
+            <param name="index">The index of the item in the list for which the button is to be displayed.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.EditorList.ShowElements(UnityEditor.SerializedProperty,Jundroo.SimplePlanes.ModTools.Editor.EditorListOption)">
+            <summary>
+            Shows the elements of the list.
+            </summary>
+            <param name="list">The list being displayed.</param>
+            <param name="options">The options for the list being displayed.</param>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.Extensions.IEnumerableExtensions">
+            <summary>
+            A class containing extension methods for IEnumerables.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.Extensions.IEnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            A shorthand for-each statement for IEnumerables.
+            </summary>
+            <typeparam name="T">The type of the enumerable.</typeparam>
+            <param name="enumerable">The enumerable.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.Extensions.XAttributeExtensions">
+            <summary>
+            A class containing extension methods for XAttributes.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.Extensions.XAttributeExtensions.ToVector3(System.Xml.Linq.XAttribute)">
+            <summary>
+            Converts the attribute to a Vector3.
+            </summary>
+            <param name="attribute">The attribute.</param>
+            <returns>The Vector3 or <c>null</c>.</returns>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.MenuItems">
+            <summary>
+            A class defining the custom editor menu items provided by the mod tools.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.MenuItems._projectDirectory">
+            <summary>
+            The directory of the unity project.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateLevelScript(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a custom level script.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartModifierScripts(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a set of new part modifier scripts.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a map component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a map component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartColliderConfigurationComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a part collider configuration component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartColliderConfigurationComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a part collider configuration component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartMeshConfigurationComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a part mesh configuration component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartMeshConfigurationComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a part mesh configuration component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartPrefabLinkComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a part prefab link component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartPrefabLinkComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a part prefab link component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartModifierReferenceComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a part modifier reference component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartModifierReferenceComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a part modifier reference component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartAttachPointComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a part attach point component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartAttachPointComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a part attach point component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectAIAircraft(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads an AI aircraft object at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectMissileDefenseBase(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads a missile defense base object at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectLaserDefenseTurret(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads a laser defense turret object at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectMissileLauncher(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads a missile launcher object at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectAATank(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads an anti-aircraft tank at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectConvoy(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads a convoy at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectDestroyer(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads the Destroyer ship at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectUssBeast(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads the USS Beast at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectUssTiny(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads the USS Tiny at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectBridge(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads a bridge at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObject(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a map object.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePartObject(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a part object.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapStartLocationObject(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a map start location object.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapStartLocationComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a map start location component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapStartLocationComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a map start location component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateDesignerPlugin(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a designer plugin.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateDesignerPluginComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a designer plugin component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateDesignerPluginComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a designer plugin component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapPlugin(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a map plugin.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapPluginComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a map plugin component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapPluginComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a map plugin component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePersistentObject(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a persistent object.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePersistentObjectComponentValidation(UnityEditor.MenuCommand)">
+            <summary>
+            Validation for a menu item to create a persistent object component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+            <returns>A value indicating whether or not the menu item is enabled.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreatePersistentObjectComponent(UnityEditor.MenuCommand)">
+            <summary>
+            A menu item to create a persistent object component.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateServiceProviderScript(UnityEditor.MenuCommand)">
+            <summary>
+            Creates the service provider script.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.ShowModBuilderWindow">
+            <summary>
+            Shows the mod builder window.
+            </summary>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin">
+            <summary>
+            A plugin to the mod builder window providing SimplePlanes specific functionality.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._designerPlugins">
+            <summary>
+            The list of designer plugins to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._designerPluginsScrollPosition">
+            <summary>
+            The current scroll position of the designer plugins list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._designerPluginsVisible">
+            <summary>
+            The current visibility of the designer plugins list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._levels">
+            <summary>
+            The list of levels to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._levelsScrollPosition">
+            <summary>
+            The current scroll position of the levels list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._levelsVisible">
+            <summary>
+            The current visibility of the levels list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapPlugins">
+            <summary>
+            The list of map plugins to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapPluginsScrollPosition">
+            <summary>
+            The current scroll position of the map plugins list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapPluginsVisible">
+            <summary>
+            The current visibility of the map plugins list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._maps">
+            <summary>
+            The list of maps to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapsScrollPosition">
+            <summary>
+            The current scroll position of the maps list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapsVisible">
+            <summary>
+            The current visibility of the maps list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._parts">
+            <summary>
+            The list of parts to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._partsScrollPosition">
+            <summary>
+            The current scroll position of the parts list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._partsVisible">
+            <summary>
+            The current visibility of the parts list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._persistentObjects">
+            <summary>
+            The list of persistent objects to be saved in the mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._persistentObjectsScrollPosition">
+            <summary>
+            The current scroll position of the persistent objects list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._persistentObjectsVisible">
+            <summary>
+            The current visibility of the persistent objects list.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.AdditionalAssets">
+            <summary>
+            Gets the additional assets to be included in the mod. This is a list of asset paths to be included in the mod's asset bundle.
+            </summary>
+            <value>
+            The additional assets to be included in the mod. This is a list of asset paths to be included in the mod's asset bundle.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.AssembliesToIgnore">
+            <summary>
+            Gets the assemblies to ignore when determining which assemblies need to be saved in the mod.
+            </summary>
+            <value>
+            The assemblies to ignore when determining which assemblies need to be saved in the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ManifestSectionName">
+            <summary>
+            Gets the name of the manifest section associated with this plugin.
+            </summary>
+            <value>
+            The name of the manifest section associated with this plugin.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ModFileExtensionAndroid">
+            <summary>
+            Gets the mod file extension for the android player (excluding the '.').
+            </summary>
+            <value>
+            The mod file extension for the android player (excluding the '.').
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ModFileExtensionStandalone">
+            <summary>
+            Gets the mod file extension for the standalone player (excluding the '.').
+            </summary>
+            <value>
+            The mod file extension for the standalone player (excluding the '.').
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.WindowTitle">
+            <summary>
+            Gets the window title.
+            </summary>
+            <value>
+            The window title.
+            </value>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.GetSaveOptions(UnityEngine.GameObject)">
+            <summary>
+            Gets the save options for the specified game object or <c>null</c> if no specific options are needed.
+            </summary>
+            <param name="gameObject">The game object to save.</param>
+            <returns>
+            The game object save options or <c>null</c> if no specific options are needed.
+            </returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.Initialize">
+            <summary>
+            Initializes the plugin.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.LoadManifestData(System.Xml.Linq.XElement)">
+            <summary>
+            Loads the mod manifest data for the specified section associated with this plugin.
+            </summary>
+            <param name="manifestSection">The mod manifest section for this plugin.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnBeforeGameObjectSaved(UnityEngine.GameObject)">
+            <summary>
+            Called when a game object is about to be saved.
+            </summary>
+            <param name="prefabToSave">The prefab that is about to be saved.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnCompleteAndSaveStarted">
+            <summary>
+            Called when the user starts the process to complete and save the mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnGameObjectRemoved(Jundroo.ModTools.Editor.ModGameObject)">
+            <summary>
+            Called when a game object is removed from the list of saved game objects.
+            </summary>
+            <param name="gameObject">The game object being removed.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnGameObjectSaved(UnityEngine.GameObject)">
+            <summary>
+            Called when a game object is saved.
+            </summary>
+            <param name="savedPrefab">The prefab that was just saved.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnGUI_BeforeGameObjectList">
+            <summary>
+            Called during OnGUI before the game object list is output.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnInitializeComplete">
+            <summary>
+            Called when initialization is complete.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnModStarted(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Called when a mod is started.
+            </summary>
+            <param name="modName">The name of the mod.</param>
+            <param name="modAuthor">The mod author.</param>
+            <param name="modVersionMajor">The mod major version number.</param>
+            <param name="modVersionMinor">The mod minor version number.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.SaveManifestData(System.Xml.Linq.XElement)">
+            <summary>
+            Saves the mod manifest data to the specified xml element.
+            </summary>
+            <param name="manifestSection">The mod manifest section associated with this plugin.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.SaveMod(System.String,System.String,Jundroo.ModTools.Core.ModTargetPlatform)">
+            <summary>
+            Give the plugin a chance to save the mod.
+            Returns <c>true</c> if the mod was saved, <c>false</c> otherwise.
+            </summary>
+            <param name="assetBundlePath">The asset bundle path.</param>
+            <param name="targetPath">The target path.</param>
+            <param name="targetPlatform">The target platform of the mod.</param>
+            <returns><c>true</c> if the mod was saved, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ShouldSaveGameObject(UnityEngine.GameObject)">
+            <summary>
+            Determines if the specified game object that the user is attempting to save should actually be saved.
+            </summary>
+            <param name="gameObject">The game object to be saved.</param>
+            <returns><c>true</c> if the game object should be saved, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ValidatePartColliders(Jundroo.SimplePlanes.ModTools.Parts.Part,UnityEngine.GameObject)">
+            <summary>
+            Validates the part colliders.
+            </summary>
+            <param name="part">The part to validate.</param>
+            <param name="prefab">The prefab for the part being validated.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.SavePart(UnityEngine.GameObject,Jundroo.SimplePlanes.ModTools.Parts.Part)">
+            <summary>
+            Saves the specified part.
+            </summary>
+            <param name="prefab">The prefab associated with the part or <c>null</c> if this part references an existing prefab.</param>
+            <param name="part">The part being saved.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ScanAssemblyForLevels(System.Reflection.Assembly)">
+            <summary>
+            Scans the specified assembly for levels.
+            </summary>
+            <param name="assembly">The assembly to scan.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ScanModAssemblies">
+            <summary>
+            Scans all the assemblies to be included in the mod.
+            The scan will attempt to find levels defined in these assemblies.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.UpdateLayers">
+            <summary>
+            Update the projects layers to use the same layers as SimplePlanes
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.UpdateTags">
+            <summary>
+            Update the projects tags to use the same tags as SimplePlanes
+            </summary>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartEditor">
+            <summary>
+            A custom editor for parts.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.CreateNewModifierDisplayText">
+            <summary>
+            The display text for creating a new part modifier.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.PartEditor._existingPartList">
+            <summary>
+            The list of existing parts.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.PartEditor._modifierList">
+            <summary>
+            The list of available part modifiers.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.PartEditor._existingPartSelectedIndex">
+            <summary>
+            The selected index of the existing part list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.PartEditor._modifierSelectedIndex">
+            <summary>
+            The selected index of the part modifier list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.PartEditor._pendingScriptAttachmentType">
+            <summary>
+            The type of the script that is pending attachment to this game object (if any).
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.SimplePlanes.ModTools.Editor.PartEditor"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.OnInspectorGUI">
+            <summary>
+            Draws the custom GUI for the inspector.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ShowInitializedGUI(Jundroo.SimplePlanes.ModTools.Parts.Part)">
+            <summary>
+            Shows the initialized GUI.
+            </summary>
+            <param name="part">The part for which the GUI is being shown.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ShowUninitializedGUI(Jundroo.SimplePlanes.ModTools.Parts.Part)">
+            <summary>
+            Shows the uninitialized GUI.
+            </summary>
+            <param name="part">The part for which the GUI is being shown.</param>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ExistingPartListEntry">
+            <summary>
+            A class representing an entry in the existing parts list.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ExistingPartListEntry.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ExistingPartListEntry"/> class.
+            </summary>
+            <param name="displayText">The display text of the entry.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ExistingPartListEntry.DisplayText">
+            <summary>
+            Gets the display text of the entry.
+            </summary>
+            <value>
+            The display text of the entry.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ModifierListEntry">
+            <summary>
+            A class representing an entry in the part modifier list.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ModifierListEntry.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ModifierListEntry"/> class.
+            </summary>
+            <param name="displayText">The display text of the entry.</param>
+            <param name="isPlaceholderText">If set to <c>true</c>, the entry is a placeholder text entry.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ModifierListEntry.#ctor(System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ModifierListEntry"/> class.
+            </summary>
+            <param name="displayText">The display text of the entry.</param>
+            <param name="modifierType">The type of the modifier.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ModifierListEntry.DisplayText">
+            <summary>
+            Gets the display text of the entry.
+            </summary>
+            <value>
+            The display text of the entry.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ModifierListEntry.IsPlaceholderText">
+            <summary>
+            Gets a value indicating whether this entry is placeholder text.
+            </summary>
+            <value>
+            <c>true</c> if this entry is placeholder text; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartEditor.ModifierListEntry.ModifierType">
+            <summary>
+            Gets the type of the modifier associated with the entry.
+            </summary>
+            <value>
+            The type of the modifier associated with the entry.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.DesignerParts">
+            <summary>
+            A class used for reading the designer parts XML.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.DesignerParts._xdoc">
+            <summary>
+            The XML document for the designer parts XML.
+            </summary>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.DesignerParts.XDoc">
+            <summary>
+            Gets the XML document for the designer parts XML.
+            </summary>
+            <value>
+            The XML document for the designer parts XML.
+            </value>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.DesignerParts.ClonePart(System.String,Jundroo.SimplePlanes.ModTools.Parts.Part)">
+            <summary>
+            Clones the part with the specified name in to the specified part script.
+            </summary>
+            <param name="partName">The name of the part to clone.</param>
+            <param name="part">The part script in to which the existing part should be cloned.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.DesignerParts.GetPartId(System.String)">
+            <summary>
+            Gets the part identifier of the specified part.
+            </summary>
+            <param name="partName">The name of the part for which to get the identifier.</param>
+            <returns>The part identifier or <c>null</c> if it could not be found.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.DesignerParts.GetPartNames">
+            <summary>
+            Gets the names of all the parts (sorted alphabetically) in the designer parts XML.
+            </summary>
+            <returns>The names of all the parts (sorted alphabetically) in the designer parts XML.</returns>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartModifierAttributeInfo">
+            <summary>
+            A class representing attribute information for a part modifier property.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartModifierAttributeInfo.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Editor.PartModifierAttributeInfo"/> class.
+            </summary>
+            <param name="name">The name of the property.</param>
+            <param name="exampleValues">The list of example values.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartModifierAttributeInfo.ExampleValues">
+            <summary>
+            Gets the example values for the property.
+            </summary>
+            <value>
+            The example values for the property.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartModifierAttributeInfo.Name">
+            <summary>
+            Gets the name of the property.
+            </summary>
+            <value>
+            The name of the property.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartModifierCreator">
+            <summary>
+            A class containing the functionality to create part modifier scripts.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartModifierCreator.CreatePartModifier">
+            <summary>
+            Creates a part modifier.
+            </summary>
+            <returns>The result of the creation operation.</returns>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartModifierCreatorResult">
+            <summary>
+            A class representing the result of a part modifier creation.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartModifierCreatorResult.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Editor.PartModifierCreatorResult"/> class.
+            </summary>
+            <param name="modifierType">Type of the modifier.</param>
+            <param name="modifierScriptType">Type of the modifier script.</param>
+            <param name="behaviourType">Type of the behaviour.</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartModifierCreatorResult.BehaviourType">
+            <summary>
+            Gets the type of the behaviour.
+            </summary>
+            <value>
+            The type of the behaviour.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartModifierCreatorResult.ModifierScriptType">
+            <summary>
+            Gets the type of the modifier script.
+            </summary>
+            <value>
+            The type of the modifier script.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartModifierCreatorResult.ModifierType">
+            <summary>
+            Gets the type of the modifier.
+            </summary>
+            <value>
+            The type of the modifier.
+            </value>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartModifierReferencePropertyEditor">
+            <summary>
+            A custom editor for part modifier reference properties.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartModifierReferencePropertyEditor.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the custom GUI for the property.
+            </summary>
+            <param name="position">Rectangle on the screen to use for the property GUI.</param>
+            <param name="property">The SerializedProperty to make the custom GUI for.</param>
+            <param name="label">The label of this property.</param>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartModifierReferenceScriptEditor">
+            <summary>
+            A custom editor for a component that references a part modifier that already exists in the game.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartModifierReferenceScriptEditor.OnInspectorGUI">
+            <summary>
+            Draws the custom inspector GUI.
+            </summary>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartModifierScriptEditor">
+            <summary>
+            A custom editor for part modifier scripts.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartModifierScriptEditor.OnInspectorGUI">
+            <summary>
+            Draws the inspector GUI.
+            </summary>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartTypes">
+            <summary>
+            A class used for reading the designer parts XML.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.PartTypes._xdoc">
+            <summary>
+            The XML document for the part types XML.
+            </summary>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Editor.PartTypes.XDoc">
+            <summary>
+            Gets the XML document for the part types XML.
+            </summary>
+            <value>
+            The XML document for the part types XML.
+            </value>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartTypes.ClonePart(System.String,Jundroo.SimplePlanes.ModTools.Parts.Part)">
+            <summary>
+            Clones the part with the specified ID in to the specified part script.
+            </summary>
+            <param name="partId">The part identifier of the part to clone.</param>
+            <param name="part">The part script in to which the existing part should be cloned.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartTypes.GetModifierAttributeInfo(System.String)">
+            <summary>
+            Gets the modifier attribute information for the specified modifier sorted by attribute name.
+            </summary>
+            <param name="modifierName">The name of the modifier for which to get attribute information.</param>
+            <returns>The requested attribute information.</returns>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.PartTypes.GetModifierNames">
+            <summary>
+            Gets the names of all part modifiers in the XML sorted alphabetically.
+            </summary>
+            <returns>The names of all part modifiers in the XML sorted alphabetically.</returns>
+        </member>
+    </members>
+</doc>
