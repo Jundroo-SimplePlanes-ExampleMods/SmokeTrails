@@ -11,7 +11,7 @@
       <AttachPoint adaptiveIgnore="true" a="1111" allowRotation="true" display="false" displayWhenDragged="false" fuselageConnection="false" ignoreGrid="true" ignoreSurface="false" jointType="Fixed" wingAttach="true" normal="0,-1,0" position="0,0,0" />
     </AttachPoints>
   </PartType>
-  <DesignerPart name="Smoke Trail Nozzle" category="Gizmos" description="A small nozzle that can emit a colored smoke trail.">
+  <DesignerPart name="Smoke Trail Nozzle" category="Gizmos" description="A small nozzle that can emit a colored smoke trail." icon="Assets/Textures/PartIcons/SmokeTrailNozzleIcon.png">
     <Assembly>
       <Parts>
         <Part id="1" partType="Mod_SmokeTrails_SmokeTrailNozzle" position="0,0,0" rotation="0,0,0" />
