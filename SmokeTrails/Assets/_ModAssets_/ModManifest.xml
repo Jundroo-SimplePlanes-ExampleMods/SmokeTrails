@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ModManifest buildID="951e7bb5-b19f-49a8-a4ed-44d62ce57b27">
-  <Mod name="Smoke Trails" author="NathanMikeska" versionMajor="1" versionMinor="0" lastUpdated="9/8/2016 6:59:57 PM" apiVersion="1.0.0.0" description="Adds customizable smoke trails to the game via a smoke trail nozzle part in the gimzos part list.">
+<ModManifest buildID="ef6b9f94-ccba-426f-8f7d-1c136b4c7694">
+  <Mod name="Smoke Trails" author="NathanMikeska" versionMajor="1" versionMinor="0" lastUpdated="9/13/2016 7:42:18 PM" apiVersion="1.0.0.0" description="Adds customizable smoke trails to the game via a smoke trail nozzle part in the gimzos part list.">
     <Steam title="Smoke Trails" visibility="FriendsOnly" previewPath="Assets/Steam/SteamPreview.png" language="English" tags="Parts">
       <description>Adds customizable smoke trails to the game via a smoke trail nozzle part in the gizmos part list. Smoke trails can be toggled on and off via an activation group. The look and behavior of the trails can be configured via the part properties menu for the smoke trail nozzle in the designer. The color of the smoke trails can be changed via the Trim 1 paint color for the nozzles. Enjoy!
 
