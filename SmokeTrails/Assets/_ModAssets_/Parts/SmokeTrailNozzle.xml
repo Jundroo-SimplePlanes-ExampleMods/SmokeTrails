@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Part name="SmokeTrailNozzle">
-  <PartType id="Mod_SmokeTrails_SmokeTrailNozzle" name="SmokeTrailNozzle" modPrefabPath="Assets/_ModAssets_/Parts/SmokeTrailNozzle.prefab" mass="10" sharesRigidBody="true" combineMeshes="false" disconnectForce="10" underwaterDragScalar="30" defaultMaterials="0,1,-1,-1">
+  <PartType id="Mod_SmokeTrails_SmokeTrailNozzle" name="SmokeTrailNozzle" modPrefabPath="Assets/_ModAssets_/Parts/SmokeTrailNozzle.prefab" mass="10" health="100" damageDisconnect="true" sharesRigidBody="true" combineMeshes="false" disconnectForce="10" underwaterDragScalar="30" defaultMaterials="0,1,-1,-1">
     <Modifiers>
       <ModModifier id="SmokeTrails_SmokeTrails" type="Assets.Scripts.Parts.SmokeTrails, SmokeTrails-Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <DefaultState _activationGroup="1" _alpha="0.8" _density="2" _ignoreLighting="false" _initialSpeed="0" _lifetime="10" _maxSize="6" _minSize="2" />

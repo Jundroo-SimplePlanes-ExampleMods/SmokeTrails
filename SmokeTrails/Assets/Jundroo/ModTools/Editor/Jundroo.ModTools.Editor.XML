@@ -104,11 +104,6 @@
             The list of assemblies to be saved in the mod.
             </summary>
         </member>
-        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assembliesScrollPosition">
-            <summary>
-            The current scroll position of the assemblies list.
-            </summary>
-        </member>
         <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assembliesVisible">
             <summary>
             The current visibility of the assemblies list.
@@ -117,11 +112,6 @@
         <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assets">
             <summary>
             The list of assets to be saved in the mod.
-            </summary>
-        </member>
-        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assetsScrollPosition">
-            <summary>
-            The current scroll position of the assets list.
             </summary>
         </member>
         <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._assetsVisible">
@@ -149,14 +139,14 @@
             The list of game objects to be saved in the mod.
             </summary>
         </member>
-        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._gameObjectsScrollPosition">
-            <summary>
-            The current scroll position of the game objects list.
-            </summary>
-        </member>
         <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._gameObjectsVisible">
             <summary>
             The current visibility of the game objects list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._hasAsmDefFiles">
+            <summary>
+            A value indicating whether the project has asmdef files included.
             </summary>
         </member>
         <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._ignoredAssemblyNames">
@@ -167,6 +157,11 @@
         <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._isWindowDirty">
             <summary>
             A value indicating if the window is dirty (in need of a repainting).
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._mainWindowScrollPosition">
+            <summary>
+            The main window scroll position.
             </summary>
         </member>
         <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modAuthor">
@@ -182,6 +177,11 @@
         <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modInWork">
             <summary>
             A value indicating whether a mod is currently in work.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modLoadPriority">
+            <summary>
+            The mod load priority.
             </summary>
         </member>
         <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._modName">
@@ -247,6 +247,14 @@
             The name of the mod.
             </value>
         </member>
+        <member name="P:Jundroo.ModTools.Editor.ModBuilderWindow.ProjectDirectory">
+            <summary>
+            Gets the directory of the unity project.
+            </summary>
+            <value>
+            The directory of the unity project.
+            </value>
+        </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ShowWindow">
             <summary>
             Shows the mod builder window.
@@ -275,6 +283,11 @@
             Saves the asset at the specified path. (i.e. track it as an asset to be included in the mod)
             </summary>
             <param name="assetPath">The path of the asset to save.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveSelectedSceneObjects">
+            <summary>
+            Saves the selected scene objects, including them in the mod.
+            </summary>
         </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SetWindowDirty">
             <summary>
@@ -307,16 +320,48 @@
             <param name="obj">The object for which to get prefab dependencies.</param>
             <param name="prefabPaths">The list of asset paths of dependent prefabs.</param>
         </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.UnpackAllPrefabs(UnityEngine.GameObject)">
+            <summary>
+            Unpacks all prefabs in the transform heirarchy (included the root object).
+            </summary>
+            <param name="obj">The root object for which to unpack all prefabs.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.BuildAndSaveProjectAssemblies(UnityEditor.BuildTarget,System.Boolean)">
+            <summary>
+            Builds the player and and saves project assemblies from the build.
+            </summary>
+            <param name="buildTarget">The build target.</param>
+            <param name="debugBuild">A value indicating if this is a debug build of the mod.</param>
+            <returns>A value indicating success (<c>true</c>) or failure (<c>false</c>).</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.BuildAssetBundle(UnityEditor.BuildTarget,System.Boolean)">
+            <summary>
+            Builds the mod asset bundle for the specified build target.
+            </summary>
+            <param name="buildTarget">The build target.</param>
+            <param name="debugBuild">A value indicating if this is a debug build of the mod.</param>
+            <returns>The path of the built asset bundle or <c>null</c> if the build failed.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.BuildAssetBundles(System.String,UnityEditor.BuildTarget[],System.Boolean)">
+            <summary>
+            Builds the asset bundles for the specified build targets and joins them in to a single mod file for the game.
+            </summary>
+            <param name="targetPath">The target path of the mod file.</param>
+            <param name="buildTargets">The build targets.</param>
+            <param name="debugBuild">A value indicating if this is a debug build of the mod.</param>
+            <returns>A value indicating if the build succeeded or not.</returns>
+        </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.CleanModAssetsFolder">
             <summary>
             Cleans the mod assets folder deleting all the files.
             </summary>
         </member>
-        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.CompleteAndSaveMod(Jundroo.ModTools.Core.ModTargetPlatform)">
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.CompleteAndSaveMod(Jundroo.ModTools.Core.ModTargetPlatform,System.Boolean)">
             <summary>
             Completes the mod and saves it to a location chosen by the user.
             </summary>
             <param name="targetPlatform">The target platform for the mod.</param>
+            <param name="debugBuild">A value indicating if this is a debug build.</param>
         </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.ExtractAssembliesFromApk(System.String,System.String)">
             <summary>
@@ -324,6 +369,13 @@
             </summary>
             <param name="apkPath">The APK path.</param>
             <param name="targetDirectory">The target directory to which to extract assemblies.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.GetModFileExtension(Jundroo.ModTools.Core.ModTargetPlatform)">
+            <summary>
+            Gets the mod file extension for the specified platform.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The mod file extension for the specified platform.</returns>
         </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.Initialize">
             <summary>
@@ -419,11 +471,6 @@
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveSelectedAssets">
             <summary>
             Saves the selected assets, indicating that they should be included in the mod.
-            </summary>
-        </member>
-        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveSelectedSceneObjects">
-            <summary>
-            Saves the selected scene objects, including them in the mod.
             </summary>
         </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SortModAssemblies">
@@ -574,11 +621,12 @@
             </summary>
             <param name="manifestSection">The mod manifest section for this plugin.</param>
         </member>
-        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnBeforeGameObjectSaved(UnityEngine.GameObject)">
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnBeforeGameObjectSaved(UnityEngine.GameObject,System.String)">
             <summary>
             Called when a game object is about to be saved.
             </summary>
-            <param name="prefabToSave">The prefab that is about to be saved.</param>
+            <param name="prefabContent">The prefab content being saved.</param>
+            <param name="prefabPath">The path of the prefab being saved.</param>
         </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnCompleteAndSaveStarted">
             <summary>
@@ -591,11 +639,12 @@
             </summary>
             <param name="gameObject">The game object being removed.</param>
         </member>
-        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnGameObjectSaved(UnityEngine.GameObject)">
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnGameObjectSaved(UnityEngine.GameObject,System.String)">
             <summary>
             Called when a game object is saved.
             </summary>
             <param name="savedPrefab">The prefab that was just saved.</param>
+            <param name="prefabPath">The path of the prefab that was just saved.</param>
         </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindowPlugin.OnGUI_BeforeAssembliesList">
             <summary>
@@ -721,6 +770,29 @@
             <param name="name">The name of the game object.</param>
             <param name="path">The asset path of the game object.</param>
         </member>
+        <member name="T:Jundroo.ModTools.Editor.MonoCecilTools">
+            <summary>
+            A collection of utilities and tools that make use of Mono.Cecil.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.MonoCecilTools.RemoveAssemblyReferences(System.String,System.Func{Mono.Cecil.AssemblyNameReference,System.Boolean})">
+            <summary>
+            Removes assembly references matching the specified condition from the assembly at the specified path.
+            </summary>
+            <param name="path">The path of the assembly to update.</param>
+            <param name="condition">The condition for references to remove. A reference is removed if returning <c>true</c> and ignored if <c>false</c>.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Editor.MonoCecilTools.CustomAssemblyResolver">
+            <summary>
+            A custom assembly resolver for mono.cecil.
+            </summary>
+            <seealso cref="T:Mono.Cecil.DefaultAssemblyResolver" />
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.MonoCecilTools.CustomAssemblyResolver.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Editor.MonoCecilTools.CustomAssemblyResolver"/> class.
+            </summary>
+        </member>
         <member name="T:Jundroo.ModTools.Editor.ProjectAssemblies">
             <summary>
             A utility class for functionality related to the project assemblies.
@@ -751,6 +823,54 @@
             <param name="requestedType">The type of the types to retrieve</param>
             <param name="includeAbstractTypesAndInterfaces">If set to <c>true</c> abstract types and interfaces will be included in the results.</param>
             <returns>The list of requested types.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Editor.UnityEditorModules">
+            <summary>
+            A utility class for getting information on Unity editor modules.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.UnityEditorModules.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.ModTools.Editor.UnityEditorModules"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.UnityEditorModules.IsAndroidInstalled">
+            <summary>
+            Gets a value indicating whether Android build support is installed.
+            </summary>
+            <value>
+              <c>true</c> if Android build support is installed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.UnityEditorModules.IsLinuxInstalled">
+            <summary>
+            Gets a value indicating whether Linux build support is installed.
+            </summary>
+            <value>
+              <c>true</c> if Linux build support is installed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.UnityEditorModules.IsMacOSInstalled">
+            <summary>
+            Gets a value indicating whether MacOS build support is installed.
+            </summary>
+            <value>
+              <c>true</c> if MacOS build support is installed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Editor.UnityEditorModules.IsWindowsInstalled">
+            <summary>
+            Gets a value indicating whether Windows build support is installed.
+            </summary>
+            <value>
+              <c>true</c> if Windows build support is installed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.UnityEditorModules.GetInstalledModuleCheck">
+            <summary>
+            Gets the installed module check function.
+            </summary>
+            <returns>The installed module check function.</returns>
         </member>
     </members>
 </doc>

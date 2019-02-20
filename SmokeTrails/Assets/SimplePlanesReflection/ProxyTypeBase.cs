@@ -358,7 +358,7 @@
       /// <returns>The proxy factory.</returns>
       private static Func<TProxy> GetProxyFactory()
       {
-         var ctor = typeof(TProxy).GetConstructor(AllBindings, null, new Type[0], null);
+         var ctor = typeof(TProxy).GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, new Type[0], null);
          if (ctor == null)
          {
             Debug.LogErrorFormat("No parameterless constructor found for proxy type '{0}'", typeof(TProxy).FullName);

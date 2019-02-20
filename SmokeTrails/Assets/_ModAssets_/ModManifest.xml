@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ModManifest buildID="ef6b9f94-ccba-426f-8f7d-1c136b4c7694">
-  <Mod name="Smoke Trails" author="NathanMikeska" versionMajor="1" versionMinor="0" lastUpdated="9/13/2016 7:42:18 PM" apiVersion="1.0.0.0" description="Adds customizable smoke trails to the game via a smoke trail nozzle part in the gimzos part list.">
+<ModManifest buildID="5bd82433-d73b-4354-becc-687148d5134c">
+  <Mod name="Smoke Trails" author="NathanMikeska" versionMajor="1" versionMinor="1" loadPriority="1000" lastUpdated="2019-02-21T18:19:11.1416925Z" apiVersion="1.0.0.0" description="Adds customizable smoke trails to the game via a smoke trail nozzle part in the gimzos part list.">
     <Steam title="Smoke Trails" visibility="FriendsOnly" previewPath="Assets/Steam/SteamPreview.png" language="English" tags="Parts">
       <description>Adds customizable smoke trails to the game via a smoke trail nozzle part in the gizmos part list. Smoke trails can be toggled on and off via an activation group. The look and behavior of the trails can be configured via the part properties menu for the smoke trail nozzle in the designer. The color of the smoke trails can be changed via the Trim 1 paint color for the nozzles. Enjoy!
 
@@ -17,6 +17,9 @@ https://github.com/Jundroo-SimplePlanes-ExampleMods/SmokeTrails</description>
       <Asset path="Assets/Textures/PartIcons/SmokeTrailNozzleIcon.png" />
       <Asset path="Assets/Textures/SmokeParticle.jpg" />
     </Assets>
+    <MaterialShaderMap>
+      <Material name="SmokeTrailParticleMaterial" shader="Legacy Shaders/Particles/Alpha Blended Premultiply" />
+    </MaterialShaderMap>
     <Assemblies>
       <Assembly name="SmokeTrails-Assembly-CSharp.dll" path="Assets/_ModAssets_/SmokeTrails-Assembly-CSharp.dll.bytes" isProjectAssembly="true" />
     </Assemblies>

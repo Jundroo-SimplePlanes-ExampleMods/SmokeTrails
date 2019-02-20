@@ -340,6 +340,12 @@
             </summary>
             <param name="menuCommand">The menu command.</param>
         </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectDestroyerWW2(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads the WW2 Destroyer ship at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectUssBeast(UnityEditor.MenuCommand)">
             <summary>
             Creates a proxy game object that loads the USS Beast at runtime.
@@ -355,6 +361,12 @@
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectBridge(UnityEditor.MenuCommand)">
             <summary>
             Creates a proxy game object that loads a bridge at runtime.
+            </summary>
+            <param name="menuCommand">The menu command.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.MenuItems.CreateMapObjectWindsock(UnityEditor.MenuCommand)">
+            <summary>
+            Creates a proxy game object that loads a windsock at runtime.
             </summary>
             <param name="menuCommand">The menu command.</param>
         </member>
@@ -462,14 +474,14 @@
             A plugin to the mod builder window providing SimplePlanes specific functionality.
             </summary>
         </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.RequiredUnityVersion">
+            <summary>
+            The required unity version for mods.
+            </summary>
+        </member>
         <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._designerPlugins">
             <summary>
             The list of designer plugins to be saved in the mod.
-            </summary>
-        </member>
-        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._designerPluginsScrollPosition">
-            <summary>
-            The current scroll position of the designer plugins list.
             </summary>
         </member>
         <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._designerPluginsVisible">
@@ -482,11 +494,6 @@
             The list of levels to be saved in the mod.
             </summary>
         </member>
-        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._levelsScrollPosition">
-            <summary>
-            The current scroll position of the levels list.
-            </summary>
-        </member>
         <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._levelsVisible">
             <summary>
             The current visibility of the levels list.
@@ -495,11 +502,6 @@
         <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapPlugins">
             <summary>
             The list of map plugins to be saved in the mod.
-            </summary>
-        </member>
-        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapPluginsScrollPosition">
-            <summary>
-            The current scroll position of the map plugins list.
             </summary>
         </member>
         <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapPluginsVisible">
@@ -512,11 +514,6 @@
             The list of maps to be saved in the mod.
             </summary>
         </member>
-        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapsScrollPosition">
-            <summary>
-            The current scroll position of the maps list.
-            </summary>
-        </member>
         <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._mapsVisible">
             <summary>
             The current visibility of the maps list.
@@ -525,11 +522,6 @@
         <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._parts">
             <summary>
             The list of parts to be saved in the mod.
-            </summary>
-        </member>
-        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._partsScrollPosition">
-            <summary>
-            The current scroll position of the parts list.
             </summary>
         </member>
         <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._partsVisible">
@@ -542,14 +534,14 @@
             The list of persistent objects to be saved in the mod.
             </summary>
         </member>
-        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._persistentObjectsScrollPosition">
-            <summary>
-            The current scroll position of the persistent objects list.
-            </summary>
-        </member>
         <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._persistentObjectsVisible">
             <summary>
             The current visibility of the persistent objects list.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin._wrongUnityVersion">
+            <summary>
+            A value indicating whether the user is using the wrong unity version.
             </summary>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.#ctor">
@@ -625,11 +617,12 @@
             </summary>
             <param name="manifestSection">The mod manifest section for this plugin.</param>
         </member>
-        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnBeforeGameObjectSaved(UnityEngine.GameObject)">
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnBeforeGameObjectSaved(UnityEngine.GameObject,System.String)">
             <summary>
             Called when a game object is about to be saved.
             </summary>
-            <param name="prefabToSave">The prefab that is about to be saved.</param>
+            <param name="prefabContent">The prefab content being saved.</param>
+            <param name="prefabPath">The path of the prefab being saved.</param>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnCompleteAndSaveStarted">
             <summary>
@@ -642,15 +635,21 @@
             </summary>
             <param name="gameObject">The game object being removed.</param>
         </member>
-        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnGameObjectSaved(UnityEngine.GameObject)">
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnGameObjectSaved(UnityEngine.GameObject,System.String)">
             <summary>
             Called when a game object is saved.
             </summary>
             <param name="savedPrefab">The prefab that was just saved.</param>
+            <param name="prefabPath">The path of the prefab that was just saved.</param>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnGUI_BeforeGameObjectList">
             <summary>
             Called during OnGUI before the game object list is output.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnGUI_End">
+            <summary>
+            Called at the end of OnGUI.
             </summary>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.OnInitializeComplete">
@@ -669,7 +668,7 @@
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.SaveManifestData(System.Xml.Linq.XElement)">
             <summary>
-            Saves the mod manifest data to the specified xml element.
+            Saves the mod manifest data to the specified XML element.
             </summary>
             <param name="manifestSection">The mod manifest section associated with this plugin.</param>
         </member>
@@ -697,12 +696,13 @@
             <param name="part">The part to validate.</param>
             <param name="prefab">The prefab for the part being validated.</param>
         </member>
-        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.SavePart(UnityEngine.GameObject,Jundroo.SimplePlanes.ModTools.Parts.Part)">
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.SavePart(Jundroo.SimplePlanes.ModTools.Parts.Part,UnityEngine.GameObject,System.String)">
             <summary>
             Saves the specified part.
             </summary>
-            <param name="prefab">The prefab associated with the part or <c>null</c> if this part references an existing prefab.</param>
             <param name="part">The part being saved.</param>
+            <param name="prefab">The prefab associated with the part or <c>null</c> if this part references an existing prefab.</param>
+            <param name="prefabPath">The prefab path for the part being saved (or <c>null</c> if this part references an existing prefab).</param>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ScanAssemblyForLevels(System.Reflection.Assembly)">
             <summary>
@@ -710,15 +710,31 @@
             </summary>
             <param name="assembly">The assembly to scan.</param>
         </member>
-        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ScanModAssemblies">
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.ScanModAssemblies(System.Boolean)">
             <summary>
             Scans all the assemblies to be included in the mod.
             The scan will attempt to find levels defined in these assemblies.
             </summary>
+            <param name="modCreated"><c>true</c> if assemblies are being scanned when the mod is first created, <c>false</c> otherwise.</param>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.UpdateAlwaysIncludedShaders">
+            <summary>
+            Removes all entries from the list of always included shaders.
+            We do this to hopefully force all shaders to be included in the mod asset bundles, which should
+            hopefully make them less likely to break due to Unity upgrades (but honestly... I don't know what I'm doing)
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.UpdateGraphicApis">
+            <summary>
+            Update our graphics APIs to include as many shaders as possible for each platform.
+            This is mainly to try and minimize mods breaking over time with Unity upgrades.
+            I doubt it will do a lot of good, but... we shall try anyway.
+            (it does bloat the asset bundle size though...)
+            </summary>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.UpdateLayers">
             <summary>
-            Update the projects layers to use the same layers as SimplePlanes
+            Update the projects layers to use the same layers as the game
             </summary>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.UpdateTags">

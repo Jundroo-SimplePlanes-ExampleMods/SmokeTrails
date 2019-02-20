@@ -29,6 +29,9 @@ sysinfo.txt
 *.apk
 *.unitypackage
 /SmokeTrails/Library
+/SmokeTrails/Temp
+/SmokeTrails/obj
+/SmokeTrails/.vs
 /SmokeTrails/.mdb
 /SmokeTrails/ModAssetBundles
 /SmokeTrails/StyleCop.Cache

@@ -249,6 +249,14 @@
             Occurs when a game object is loaded.
             </summary>
         </member>
+        <member name="P:Jundroo.ModTools.IModResourceLoader.ModInfo">
+            <summary>
+            Gets the mod information.
+            </summary>
+            <value>
+            The mod information.
+            </value>
+        </member>
         <member name="M:Jundroo.ModTools.IModResourceLoader.LoadAsset``1(System.String)">
             <summary>
             Loads the asset at the specified path.
@@ -313,6 +321,109 @@
             The resource loader service allows dynamic loading of resources from the mod.
             </value>
         </member>
+        <member name="T:Jundroo.ModTools.IModInfo">
+            <summary>
+            An object containing information about a mod.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.Author">
+            <summary>
+            Gets the mod's author.
+            </summary>
+            <value>
+            The mod's author.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.BuildId">
+            <summary>
+            Gets the build identifier if one exists.
+            </summary>
+            <value>
+            The build identifier if one exists.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.Description">
+            <summary>
+            Gets the description of the mod.
+            </summary>
+            <value>
+            The description of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.Enabled">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Jundroo.ModTools.IModInfo"/> is enabled.
+            </summary>
+            <value>
+              <c>true</c> if enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.IsLegacyMod">
+            <summary>
+            Gets a value indicating whether this mod is a legacy mod (created prior to the move to Unity 2018).
+            </summary>
+            <value>
+              <c>true</c> if this mod is a legacy mod (created prior to the move to Unity 2018); otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.IsSteamWorkshopSubscription">
+            <summary>
+            Gets a value indicating whether this mod is steam workshop subscription.
+            </summary>
+            <value>
+            <c>true</c> if this mod is steam workshop subscription; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.LastUpdated">
+            <summary>
+            Gets the last updated date time of the mod.
+            </summary>
+            <value>
+            The last updated date time of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.LoadPriority">
+            <summary>
+            Gets the load priority for the mod.
+            Mods with a lower priority number will be loaded before mods with a higher number.
+            </summary>
+            <value>
+            The load priority for the mod.
+            Mods with a lower priority number will be loaded before mods with a higher number.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.Name">
+            <summary>
+            Gets the name of the mod.
+            </summary>
+            <value>
+            The name of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.Path">
+            <summary>
+            Gets the file path of the mod.
+            </summary>
+            <value>
+            The file path of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.SteamWorkshopItemId">
+            <summary>
+            Gets the Steam Workshop item identifier if the mod is from the Steam Workshop.
+            </summary>
+            <value>
+            The Steam Workshop item identifier if the mod is from the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.IModInfo.Version">
+            <summary>
+            Gets the version number of the mod.
+            </summary>
+            <value>
+            The version number of the mod.
+            </value>
+        </member>
         <member name="T:Jundroo.ModTools.ModServiceProvider">
             <summary>
             A base class for a service provider for a mod.
@@ -375,6 +486,53 @@
             <param name="service">The service to register.</param>
             <exception cref="T:System.ArgumentException">
             Thrown if the service object is <c>null</c> or it does not inherit from the specified service type.</exception>
+        </member>
+        <member name="T:Jundroo.ModTools.Project">
+            <summary>
+            A static class containing project level constants.
+            This class is used as a proxy to the real Jundroo.SimplePlanes.ModTools.Project class (via reflection).
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Project.Name">
+            <summary>
+            The name of the project.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Project._getPropertyIsEditorModProject">
+            <summary>
+            The get property method for IsEditorModProject.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Project._getPropertyMainAssembly">
+            <summary>
+            The get property method for MainAssembly.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Project._projectType">
+            <summary>
+            The type of the real Jundroo.SimplePlanes.ModTools.Project class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Project.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.ModTools.Project"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Project.IsEditorModProject">
+            <summary>
+            Gets a value indicating whether the code is currently executing in the Unity editor of a mod project.
+            </summary>
+            <value>
+            <c>true</c> if the code is currently executing in the Unity editor of a mod project; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Project.MainAssembly">
+            <summary>
+            Gets the main assembly for the game.
+            </summary>
+            <value>
+            The main assembly for the game.
+            </value>
         </member>
         <member name="T:Jundroo.ModTools.Serialization.AnimationCurveSerializationSurrogate">
             <summary>
@@ -1162,18 +1320,18 @@
         </member>
         <member name="P:Jundroo.ModTools.Serialization.ScriptSerializerContext.PrefabPathMap">
             <summary>
-            Gets the prefab path map.
-            </summary>
-            <value>
-            The prefab path map.
-            </value>
-        </member>
-        <member name="P:Jundroo.ModTools.Serialization.ScriptSerializerContext.RootComponent">
-            <summary>
             Gets a dictionary that maps prefab asset paths to an actual game object.
             </summary>
             <value>
             A dictionary that maps prefab asset paths to an actual game object.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.ScriptSerializerContext.RootComponent">
+            <summary>
+            Gets the root component being serialized.
+            </summary>
+            <value>
+            The root component being serialized.
             </value>
         </member>
         <member name="P:Jundroo.ModTools.Serialization.ScriptSerializerContext.RootObject">

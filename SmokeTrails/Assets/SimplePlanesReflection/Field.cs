@@ -76,32 +76,16 @@
 
          if (!field.IsInitOnly)
          {
-            // Setting the field is a little different...
-            // Unfortunately, we don't have access to Expression.Assign(), so setting up a lambda statement for this is a no-go.
-            // We therefore fall back to creating a dynamic method via Reflection.Emit.
-            var setFieldMethod = new DynamicMethod("SetField", typeof(void), new Type[] { typeof(object), typeof(T) }, true);
-            var g = setFieldMethod.GetILGenerator();
+            // Build a lambda statement for setting the field value
+            var valueExpression = Expression.Parameter(typeof(T), "value");
+            var typedValueExpression = typeof(T) != field.FieldType ? Expression.TypeAs(valueExpression, field.FieldType) : (Expression)valueExpression;
 
-            // If this is not a static field, load the instance argument and cast it to the appropriate type (from object)
-            if (!field.IsStatic)
-            {
-               g.Emit(OpCodes.Ldarg_0);
-               g.Emit(OpCodes.Castclass, ownerType);
-            }
+            BinaryExpression assignExpression = Expression.Assign(getFieldExpression, typedValueExpression);
 
-            // Load the value argument and if not the exact type, cast it to the exact type
-            g.Emit(OpCodes.Ldarg_1);
-            if (field.FieldType != typeof(T))
-            {
-               g.Emit(OpCodes.Castclass, field.FieldType);
-            }
+            var setLambda = Expression.Lambda<Action<object, T>>(assignExpression, instanceExpression, valueExpression);
 
-            // Set the field and return
-            g.Emit(field.IsStatic ? OpCodes.Stsfld : OpCodes.Stfld, field);
-            g.Emit(OpCodes.Ret);
-
-            // Create the delegate for our set function
-            this.Set = (Action<object, T>)setFieldMethod.CreateDelegate(typeof(Action<object, T>));
+            // Compile the lambda statement for our set function
+            this.Set = setLambda.Compile();
          }
          else
          {

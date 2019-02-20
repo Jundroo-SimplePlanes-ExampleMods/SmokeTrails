@@ -461,22 +461,6 @@
             All the sandbox maps included in all the loaded mods.
             </value>
         </member>
-        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.ModFileExtensionAndroid">
-            <summary>
-            Gets the mod file extension for the android player (excluding the '.').
-            </summary>
-            <value>
-            The mod file extension for the android player (excluding the '.').
-            </value>
-        </member>
-        <member name="P:Jundroo.SimplePlanes.ModTools.Core.ModManager.ModFileExtensionStandalone">
-            <summary>
-            Gets the mod file extension for the standalone player (excluding the '.').
-            </summary>
-            <value>
-            The mod file extension for the standalone player (excluding the '.').
-            </value>
-        </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.DecompressMod(System.String)">
             <summary>
             Decompresses the mod at the specified path.
@@ -514,6 +498,16 @@
             <summary>
             Loads all the designer plugins.
             </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.GetModFilePaths(System.String,System.Boolean)">
+            <summary>
+            Gets the paths of any mod files in the specified directory.
+            </summary>
+            <param name="directory">The directory to search.</param>
+            <param name="recursive">If set to <c>true</c> the directory will be recursively scanned.</param>
+            <returns>
+            The paths of any mod files in the specified directory.
+            </returns>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Core.ModManager.LoadLevel(Jundroo.SimplePlanes.ModTools.Core.ModLevelInfo)">
             <summary>

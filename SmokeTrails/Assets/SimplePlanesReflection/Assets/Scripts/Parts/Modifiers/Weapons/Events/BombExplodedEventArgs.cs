@@ -16,8 +16,6 @@
 
       private static Property<MonoBehaviour> _explosiveForce = CreateProperty<MonoBehaviour>("ExplosiveForce");
 
-      private static Property<bool> _groundImpact = CreateProperty<bool>("GroundImpact");
-
       private static Property<Vector3> _position = CreateProperty<Vector3>("Position");
 
       protected BombExplodedEventArgs()
@@ -45,14 +43,6 @@
          get
          {
             return ExplosiveForceScript.Wrap(this.Get(_explosiveForce));
-         }
-      }
-
-      public bool GroundImpact
-      {
-         get
-         {
-            return this.Get(_groundImpact);
          }
       }
 

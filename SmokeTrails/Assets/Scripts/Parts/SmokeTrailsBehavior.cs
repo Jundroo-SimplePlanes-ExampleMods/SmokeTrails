@@ -45,6 +45,11 @@ namespace Assets.Scripts.Parts
       private Light _light;
 
       /// <summary>
+      /// The main module for the smoke trail particle system.
+      /// </summary>
+      private ParticleSystem.MainModule _mainModule;
+
+      /// <summary>
       /// The modifier for the part.
       /// </summary>
       private SmokeTrails _modifier;
@@ -120,11 +125,11 @@ namespace Assets.Scripts.Parts
          // Update the particle system emission rate if the system was enabled or disabled this frame.
          if (this._enabled && !enabledPreviousFrame)
          {
-            this._emission.rate = new ParticleSystem.MinMaxCurve(this._modifier.Density);
+            this._emission.rateOverDistance = this._modifier.Density;
          }
          else if (!this._enabled && enabledPreviousFrame)
          {
-            this._emission.rate = new ParticleSystem.MinMaxCurve(0);
+            this._emission.rateOverDistance = 0;
          }
 
          if (this._enabled)
@@ -137,7 +142,7 @@ namespace Assets.Scripts.Parts
                var color = this._light.color * this._light.intensity;
                color.a = 1f;
 
-               this._particleSystem.startColor = color;
+               this._mainModule.startColor = color;
             }
          }
       }
@@ -200,7 +205,7 @@ namespace Assets.Scripts.Parts
          float minSize = this._modifier.MinSize / 2f;
          float maxSize = this._modifier.MaxSize / 2f;
 
-         this._particleSystem.startSize = maxSize;
+         this._mainModule.startSize = maxSize;
 
          var sizeModule = this._particleSystem.sizeOverLifetime;
          sizeModule.enabled = true;
@@ -212,14 +217,15 @@ namespace Assets.Scripts.Parts
       /// </summary>
       private void InitializeParticleSystem()
       {
-         this._particleSystem.startLifetime = this._modifier.Lifetime;
-         this._particleSystem.startSpeed = this._modifier.InitialSpeed;
+         this._mainModule = this._particleSystem.main;
+         this._mainModule.startLifetime = this._modifier.Lifetime;
+         this._mainModule.startSpeed = this._modifier.InitialSpeed;
 
          this.InitializeParticleColors();
          this.InitializeParticleSizes();
 
          this._emission = this._particleSystem.emission;
-         this._emission.rate = new ParticleSystem.MinMaxCurve(0);
+         this._emission.rateOverDistance = 0;
       }
 
       /// <summary>
