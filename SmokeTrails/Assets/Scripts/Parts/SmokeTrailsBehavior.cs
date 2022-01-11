@@ -237,15 +237,7 @@ namespace Assets.Scripts.Parts
          try
          {
             var part = PartScript.GetComponentInParent(this);
-            var materialId = part.Part.MaterialIds[1];
-            var themeMaterials = part.Aircraft.Theme.Theme.Materials;
-            foreach (var material in themeMaterials)
-            {
-               if (material.Id == materialId)
-               {
-                  return material.Color;
-               }
-            }
+            return part.Aircraft.Theme.Theme.GetMaterial(part.Part.MaterialIds[1]).Color;
          }
          catch (Exception ex)
          {

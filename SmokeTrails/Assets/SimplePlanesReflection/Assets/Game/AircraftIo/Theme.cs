@@ -4,11 +4,14 @@
    using System.Collections;
    using System.Collections.Generic;
    using System.Linq;
+   using System.Reflection;
    using System.Text;
 
    public partial class Theme : ProxyType<Theme>
    {
       private static Property<object> _materials = CreateProperty<object>("Materials");
+
+      private static MethodInfo _getMaterial = GetMethod("GetMaterial", new Type[] { typeof(int) });
 
       protected Theme()
       {
@@ -26,6 +29,11 @@
 
             return list;
          }
+      }
+
+      public PartMaterial GetMaterial(int materialId)
+      {
+         return PartMaterial.Wrap(_getMaterial.Invoke(this.RealObject, new object[] { materialId }));
       }
    }
 }
