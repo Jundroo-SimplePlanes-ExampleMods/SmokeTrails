@@ -29,6 +29,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 /SmokeTrails/Library
+/SmokeTrails/Logs
 /SmokeTrails/Temp
 /SmokeTrails/obj
 /SmokeTrails/.vs
