@@ -561,16 +561,17 @@
             Initializes static members of the <see cref="T:Jundroo.ModTools.Core.ModHeader"/> class.
             </summary>
         </member>
-        <member name="M:Jundroo.ModTools.Core.ModHeader.#ctor(System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64})">
+        <member name="M:Jundroo.ModTools.Core.ModHeader.#ctor(System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64})">
             <summary>
-            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModHeader"/> class.
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModHeader" /> class.
             </summary>
             <param name="windowsOffset">The asset bundle offset for Windows or <c>null</c> if it is not supported.</param>
             <param name="macOSOffset">The asset bundle offset for MacOS or <c>null</c> if it is not supported.</param>
             <param name="linuxOffset">The asset bundle offset for Linux or <c>null</c> if it is not supported.</param>
             <param name="androidOffset">The asset bundle offset for Android or <c>null</c> if it is not supported.</param>
+            <param name="iOSOffset">The asset bundle offset for iOS or <c>null</c> if it is not supported.</param>
         </member>
-        <member name="M:Jundroo.ModTools.Core.ModHeader.#ctor(System.IO.FileInfo,System.IO.FileInfo,System.IO.FileInfo,System.IO.FileInfo)">
+        <member name="M:Jundroo.ModTools.Core.ModHeader.#ctor(System.IO.FileInfo,System.IO.FileInfo,System.IO.FileInfo,System.IO.FileInfo,System.IO.FileInfo)">
             <summary>
             Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModHeader"/> class.
             </summary>
@@ -578,6 +579,7 @@
             <param name="macOSBundle">The MacOS asset bundle file info or <c>null</c> if it is not supported.</param>
             <param name="linuxBundle">The Linux asset bundle file info or <c>null</c> if it is not supported.</param>
             <param name="androidBundle">The Android asset bundle file info or <c>null</c> if it is not supported.</param>
+            <param name="iOSBundle">The iOS asset bundle file info or <c>null</c> if it is not supported.</param>
         </member>
         <member name="P:Jundroo.ModTools.Core.ModHeader.AssetBundleOffsetAndroid">
             <summary>
@@ -619,12 +621,29 @@
             The asset bundle offset for Windows.
             </value>
         </member>
+        <member name="P:Jundroo.ModTools.Core.ModHeader.AssetBundleOffsetIOS">
+            <summary>
+            Gets the asset bundle offset for iOS.
+            This is the byte offset in the mod file at which the iOS asset bundle can be found.
+            If this is <c>null</c>, the mod file does not support the iOS platform.
+            </summary>
+            <value>
+            The asset bundle offset for iOS.
+            </value>
+        </member>
         <member name="M:Jundroo.ModTools.Core.ModHeader.Read(System.String)">
             <summary>
             Reads mod header information from the specified file path.
             </summary>
             <param name="filePath">The file path from which to read mod header information.</param>
             <returns>The requested mod header information or <c>null</c> if it could not be found or read.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModHeader.Read(System.Byte[])">
+            <summary>
+            Reads mod header information from the specified asset bytes.
+            </summary>
+            <param name="assetBytes">The asset bytes.</param>
+            <returns>The mod header, or null if it could not be read.</returns>
         </member>
         <member name="M:Jundroo.ModTools.Core.ModHeader.Write(System.IO.Stream)">
             <summary>
@@ -657,7 +676,7 @@
             Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModInfo"/> class.
             </summary>
         </member>
-        <member name="M:Jundroo.ModTools.Core.ModInfo.#ctor(System.Nullable{System.Guid},System.String,System.String,System.String,System.Version,System.DateTime,System.Int32,System.String,System.Boolean,System.Boolean)">
+        <member name="M:Jundroo.ModTools.Core.ModInfo.#ctor(System.Nullable{System.Guid},System.String,System.String,System.String,System.Version,System.DateTime,System.Int32,System.String,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModInfo" /> class.
             </summary>
@@ -671,6 +690,7 @@
             <param name="path">The file path of the mod.</param>
             <param name="legacyMod">A value indicating if this mod is a legacy mod (created prior to the move to Unity 2018).</param>
             <param name="enabled">A value indicating whether the mod has been enabled.</param>
+            <param name="isBundledMod">A value indicating if this mod is bundled in the game.</param>
         </member>
         <member name="P:Jundroo.ModTools.Core.ModInfo.Author">
             <summary>
@@ -770,6 +790,14 @@
             The version number of the mod.
             </value>
         </member>
+        <member name="P:Jundroo.ModTools.Core.ModInfo.IsBundledMod">
+            <summary>
+            Gets or sets a value indicating whether this instance is a bundled mod.
+            </summary>
+            <value>
+              <c>true</c> if this instance is a bundled mod; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="T:Jundroo.ModTools.Core.ModLoadMessage">
             <summary>
             A message logged during the loading of a mod.
@@ -782,6 +810,14 @@
             <param name="mod">The mod for which the message is being logged.</param>
             <param name="message">The message.</param>
             <param name="args">The message format arguments.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModLoadMessage.DateTime">
+            <summary>
+            Gets the date and time that the message was created.
+            </summary>
+            <value>
+            The date and time that the message was created.
+            </value>
         </member>
         <member name="P:Jundroo.ModTools.Core.ModLoadMessage.Message">
             <summary>
@@ -831,6 +867,14 @@
             </summary>
             <value>
             Any errors that may have occurred during the loading of mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.IModManagerBase.ModLoadMessages">
+            <summary>
+            Gets any messages that may have occurred during the loading of mods.
+            </summary>
+            <value>
+            Any messages that may have occurred during the loading of mods.
             </value>
         </member>
         <member name="P:Jundroo.ModTools.Core.IModManagerBase.ModLoadWarnings">
@@ -883,6 +927,12 @@
             <param name="createIfNotFound">If set to <c>true</c> the directory will be created if it is not found.</param>
             <returns>The mods found by the scan.</returns>
         </member>
+        <member name="M:Jundroo.ModTools.Core.IModManagerBase.SaveModLoadLog(System.String)">
+            <summary>
+            Saves the mod load log to file.
+            </summary>
+            <param name="filePath">The file path for the log file to be saved.</param>
+        </member>
         <member name="T:Jundroo.ModTools.Core.ModManagerBase">
             <summary>
             A manager class for interacting with mods.
@@ -913,6 +963,11 @@
             A value indicating whether the application is built for the Windows platform.
             </summary>
         </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase.IsIOSBuild">
+            <summary>
+            A value indicating whether the application is built for the iOS platform.
+            </summary>
+        </member>
         <member name="F:Jundroo.ModTools.Core.ModManagerBase._knownMods">
             <summary>
             The list of mods known by the system.
@@ -928,6 +983,11 @@
             The list of assemblies loaded from mods.
             </summary>
         </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase._allModLoadMessages">
+            <summary>
+            A collection of all mod load messages (messages, warnings, errors) in the same order in which they were created.
+            </summary>
+        </member>
         <member name="F:Jundroo.ModTools.Core.ModManagerBase._scanResults">
             <summary>
             The list of mod file paths and associated mod information objects found by scans.
@@ -941,6 +1001,11 @@
         <member name="F:Jundroo.ModTools.Core.ModManagerBase._serviceProviderInterfaces">
             <summary>
             The list service provider interfaces.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase.MovedTypes">
+            <summary>
+            The relevant types that were moved between assemblies when between Unity 2018 and 2019.
             </summary>
         </member>
         <member name="M:Jundroo.ModTools.Core.ModManagerBase.#cctor">
@@ -985,6 +1050,14 @@
             </summary>
             <value>
             Any errors that may have occurred during the loading of mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.ModLoadMessages">
+            <summary>
+            Gets any messages that may have occurred during the loading of mods.
+            </summary>
+            <value>
+            Any messages that may have occurred during the loading of mods.
             </value>
         </member>
         <member name="P:Jundroo.ModTools.Core.ModManagerBase.ModLoadWarnings">
@@ -1035,6 +1108,12 @@
             </summary>
             <typeparam name="T">The service provider interface to register.</typeparam>
         </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.ScanForBundledMods">
+            <summary>
+            Scans for bundled mods.
+            </summary>
+            <returns>The mods found by the scan.</returns>
+        </member>
         <member name="M:Jundroo.ModTools.Core.ModManagerBase.ScanForMods(System.String,System.Boolean,System.Boolean)">
             <summary>
             Scans the specified directory for mods.
@@ -1045,6 +1124,12 @@
             <returns>
             The mods found by the scan.
             </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.SaveModLoadLog(System.String)">
+            <summary>
+            Saves the mod load log to file.
+            </summary>
+            <param name="filePath">The file path for the log file to be saved.</param>
         </member>
         <member name="M:Jundroo.ModTools.Core.ModManagerBase.AssemblyResolve(System.Object,System.ResolveEventArgs)">
             <summary>
@@ -1130,6 +1215,14 @@
             <param name="message">The message.</param>
             <param name="args">The message arguments.</param>
         </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LogLoadMessage(Jundroo.ModTools.Core.ModInfo,System.String,System.Object[])">
+            <summary>
+            Logs the mod load message.
+            </summary>
+            <param name="mod">The mod for which the message is being logged.</param>
+            <param name="message">The message.</param>
+            <param name="args">The message arguments.</param>
+        </member>
         <member name="M:Jundroo.ModTools.Core.ModManagerBase.LogLoadWarning(Jundroo.ModTools.Core.ModInfo,System.String,System.Object[])">
             <summary>
             Logs the mod load warning.
@@ -1147,6 +1240,33 @@
             <param name="manifest">The mod manifest.</param>
             <param name="assemblyPath">The assembly path in the asset bundle.</param>
             <returns>The new (or unchanged) assembly bytes.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.IsWantedArrayType(Mono.Cecil.TypeReference,System.Type@,Mono.Cecil.TypeReference)">
+            <summary>
+            Determines whether [is wanted array type] [the specified type].
+            </summary>
+            <param name="type">The type.</param>
+            <param name="newType">The new type.</param>
+            <param name="originalType">Type of the original.</param>
+            <returns>
+              <c>true</c> if [is wanted array type] [the specified type]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.CheckType(Mono.Cecil.ModuleDefinition,Mono.Cecil.TypeReference,Mono.Cecil.TypeReference@)">
+            <summary>
+            Checks the type.
+            </summary>
+            <param name="module">The module.</param>
+            <param name="input">The input.</param>
+            <param name="output">The output.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.RepairAssemblyReferencesFromUnityUpgrade(Mono.Cecil.AssemblyDefinition)">
+            <summary>
+            Repairs the assembly references from the unity upgrade from 2018 to 2019. Essentially reimports all the necessary types.
+            </summary>
+            <param name="cecilAssembly">The cecil assembly.</param>
+            <returns>If the assembly was modified</returns>
         </member>
         <member name="M:Jundroo.ModTools.Core.ModManagerBase.ReadModFileInfo(System.String)">
             <summary>
@@ -1243,6 +1363,14 @@
             Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModManifest"/> class.
             </summary>
             <param name="xml">The XML content.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.AssemblyNames">
+            <summary>
+            Gets the assembly names.
+            </summary>
+            <value>
+            The assembly names.
+            </value>
         </member>
         <member name="P:Jundroo.ModTools.Core.ModManifest.AssemblyPaths">
             <summary>
@@ -1626,6 +1754,11 @@
         <member name="F:Jundroo.ModTools.Core.ModTargetPlatform.Steam">
             <summary>
             A value indicating a target platform of the Steam Workshop.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModTargetPlatform.AllPlatforms">
+            <summary>
+            A value indicating a target platform of all platforms (for building to bundle in game).
             </summary>
         </member>
         <member name="T:Jundroo.ModTools.Core.SteamPublishInfo">

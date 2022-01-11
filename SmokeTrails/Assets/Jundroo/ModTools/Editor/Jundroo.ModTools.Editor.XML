@@ -234,6 +234,21 @@
             The visibility of the mod on the Steam Workshop.
             </summary>
         </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._showAllPlatformsButton">
+            <summary>
+            The show all platforms button
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._secretCode">
+            <summary>
+            The secret code for activating build all platforms (bundled mods).
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModBuilderWindow._secretCodePos">
+            <summary>
+            The position within the secret code.
+            </summary>
+        </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Jundroo.ModTools.Editor.ModBuilderWindow"/> class.
@@ -334,13 +349,20 @@
             <param name="debugBuild">A value indicating if this is a debug build of the mod.</param>
             <returns>A value indicating success (<c>true</c>) or failure (<c>false</c>).</returns>
         </member>
-        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.BuildAssetBundle(UnityEditor.BuildTarget,System.Boolean)">
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.BuildAssetBundle(UnityEditor.BuildTarget,System.Boolean,System.Boolean)">
             <summary>
             Builds the mod asset bundle for the specified build target.
             </summary>
             <param name="buildTarget">The build target.</param>
             <param name="debugBuild">A value indicating if this is a debug build of the mod.</param>
+            <param name="includeAssemblies">A value indicating whether to include assemblies.</param>
             <returns>The path of the built asset bundle or <c>null</c> if the build failed.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.SaveModIntoGame">
+            <summary>
+            Builds the asset bundles for a bundled mod, into the game.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:Jundroo.ModTools.Editor.ModBuilderWindow.BuildAssetBundles(System.String,UnityEditor.BuildTarget[],System.Boolean)">
             <summary>
@@ -769,6 +791,46 @@
             </summary>
             <param name="name">The name of the game object.</param>
             <param name="path">The asset path of the game object.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Editor.ModToolsInstaller">
+            <summary>
+            A class used for 'installing' the mod tools, initializing some project settings and installing required packages.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._packageAddRequest">
+            <summary>
+            The current package add request.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._packageAddRequestId">
+            <summary>
+            The package identifier for the current package add request.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._packageListRequest">
+            <summary>
+            The current package list request.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._packagesPendingInstall">
+            <summary>
+            The current list of packages pending install.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._requiredPackages">
+            <summary>
+            The list of required packages.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModToolsInstaller.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.ModTools.Editor.ModToolsInstaller"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModToolsInstaller.EditorUpdate">
+            <summary>
+            The editor update callback used to process the asynchronous work.
+            </summary>
         </member>
         <member name="T:Jundroo.ModTools.Editor.MonoCecilTools">
             <summary>

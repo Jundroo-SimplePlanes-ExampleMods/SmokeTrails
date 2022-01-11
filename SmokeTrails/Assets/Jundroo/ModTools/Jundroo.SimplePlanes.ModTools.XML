@@ -496,6 +496,43 @@
             The old sea level value on the y-axis.
             </value>
         </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.IDesignerButton">
+            <summary>
+            A designer button reference. This allows you to show or hide it and change other details.
+            </summary>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.IDesignerButton.Sprite">
+            <summary>
+            Gets or sets the sprite for the button.
+            </summary>
+            <value>
+            The sprite, which should be square.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.IDesignerButton.Tooltip">
+            <summary>
+            Gets or sets the tooltip.
+            </summary>
+            <value>
+            The tooltip, which is shown when the mouse hovers over the button.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.IDesignerButton.Callback">
+            <summary>
+            Gets or sets the callback that is invoked when the button is clicked.
+            </summary>
+            <value>
+            The callback.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.IDesignerButton.Show">
+            <summary>
+            Gets or sets a value indicating whether the button should be visible.
+            </summary>
+            <value>
+            <see langword="true"/> to show the button, else <see langword="false"/>.
+            </value>
+        </member>
         <member name="T:Jundroo.SimplePlanes.ModTools.WeatherPreset">
             <summary>
             An enumeration defining various different weather presets.
@@ -901,12 +938,28 @@
             The activate camera look input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.ActivateCatapult">
+            <summary>
+            Gets the activate catapult input.
+            </summary>
+            <value>
+            The activate catapult input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.Brake">
             <summary>
             Gets the brake input.
             </summary>
             <value>
             The brake input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.CameraLookBack">
+            <summary>
+            Gets the camera look back input.
+            </summary>
+            <value>
+            The camera look back input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.CameraLookLeftRight">
@@ -941,12 +994,28 @@
             The chase view input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.ClearConcealedPartsList">
+            <summary>
+            Gets the clear concealed parts list input.
+            </summary>
+            <value>
+            The clear concealed parts list input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.CockpitView">
             <summary>
             Gets the cockpit view input.
             </summary>
             <value>
             The cockpit view input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.ConcealPart">
+            <summary>
+            Gets the hide part input.
+            </summary>
+            <value>
+            The hide part input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.CustomCamera1">
@@ -979,6 +1048,14 @@
             </summary>
             <value>
             The custom camera 4 input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.CycleConcealmentType">
+            <summary>
+            Gets the cycle concealment type input.
+            </summary>
+            <value>
+            The cycle concealment type input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.CycleTargetingMode">
@@ -1061,6 +1138,14 @@
             The flyby view input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.InvertConcealedParts">
+            <summary>
+            Gets the invert concealed parts input.
+            </summary>
+            <value>
+            The invert concealed parts input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.LandingGear">
             <summary>
             Gets the landing gear input.
@@ -1083,6 +1168,14 @@
             </summary>
             <value>
             The load aircraft from clipboard URL input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.MaxThrottle">
+            <summary>
+            Gets the maximum throttle input.
+            </summary>
+            <value>
+            The maximum throttle input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.MirrorAircraftLeft">
@@ -1381,6 +1474,14 @@
             The toggle CoM/CoL/CoT input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.ToggleFastForward">
+            <summary>
+            Gets the toggle fast forward input.
+            </summary>
+            <value>
+            The toggle fast forward input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.ToggleMouseJoystick">
             <summary>
             Gets the toggle mouse joystick input.
@@ -1397,12 +1498,36 @@
             The toggle music input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.TogglePaintPanel">
+            <summary>
+            Gets the toggle paint panel input.
+            </summary>
+            <value>
+            The toggle paint panel input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.TogglePartPropertiesPanel">
+            <summary>
+            Gets the toggle part properties panel input.
+            </summary>
+            <value>
+            The toggle part properties panel input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.ToggleSlowMotion">
             <summary>
             Gets the toggle slow motion input.
             </summary>
             <value>
             The toggle slow motion input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.ToggleTransformPartPanel">
+            <summary>
+            Gets the toggle transform part panel input.
+            </summary>
+            <value>
+            The toggle transform part panel input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.ToggleWindSettings">
@@ -1483,6 +1608,14 @@
             </summary>
             <value>
             The yaw input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.ZeroThrottle">
+            <summary>
+            Gets the zero throttle input.
+            </summary>
+            <value>
+            The zero throttle input.
             </value>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Input.IGameInputs.FindById(System.String)">
@@ -2712,6 +2845,26 @@
             The throttle.
             </value>
         </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Interfaces.Parts.PartCollisionResponseType">
+            <summary>
+            Enumerates the way a part can respond to a collision.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Interfaces.Parts.PartCollisionResponseType.None">
+            <summary>
+            The part will not disconnect or explode as a response to a collision.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Interfaces.Parts.PartCollisionResponseType.DisconnectOnly">
+            <summary>
+            The part cannot explode. It can only disconnect in response to a collision.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Interfaces.Parts.PartCollisionResponseType.Default">
+            <summary>
+            The part is capable of exploding or disconnecting as a response to a collision.
+            </summary>
+        </member>
         <member name="T:Jundroo.SimplePlanes.ModTools.Interfaces.Parts.IPart">
             <summary>
             An interface for parts.
@@ -2862,6 +3015,14 @@
             </summary>
             <value>
             The modifiers.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Interfaces.Parts.IPart.PartCollisionResponse">
+            <summary>
+            Gets the part collision response.
+            </summary>
+            <value>
+            The part collision response.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Interfaces.Parts.IPart.PartConnections">
@@ -7654,6 +7815,15 @@
             </summary>
             <param name="elementType">Type of the element to show.</param>
         </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.IUserInterface.CreateDesignerButton(UnityEngine.Sprite,System.String,System.Action)">
+            <summary>
+            Creates a designer button. Should be called when the designer is loaded.
+            </summary>
+            <param name="sprite">A square sprite that will be shown on the button.</param>
+            <param name="tooltip">The tooltip that is shown when the mouse hovers over the button.</param>
+            <param name="callback">The callback that is run when the button is clicked.</param>
+            <returns></returns>
+        </member>
         <member name="T:Jundroo.SimplePlanes.ModTools.Layers">
             <summary>
             Layers used in the game.
@@ -7672,6 +7842,11 @@
         <member name="F:Jundroo.SimplePlanes.ModTools.Layers.AircraftLayer">
             <summary>
             The aircraft layer.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Layers.AircraftInteractable">
+            <summary>
+            The aircraft interactable layer.
             </summary>
         </member>
         <member name="F:Jundroo.SimplePlanes.ModTools.Layers.AttachPointLayerMaskAll">
@@ -8898,12 +9073,28 @@
             The activate camera look input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.ActivateCatapult">
+            <summary>
+            Gets or sets the activate catapult input.
+            </summary>
+            <value>
+            The activate catapult input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.Brake">
             <summary>
             Gets or sets the brake input.
             </summary>
             <value>
             The brake input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.CameraLookBack">
+            <summary>
+            Gets or sets the camera look back input.
+            </summary>
+            <value>
+            The camera look back input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.CameraLookLeftRight">
@@ -8938,12 +9129,28 @@
             The chase view input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.ClearConcealedPartsList">
+            <summary>
+            Gets the clear concealed parts list input.
+            </summary>
+            <value>
+            The clear concealed parts list input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.CockpitView">
             <summary>
             Gets or sets the cockpit view input.
             </summary>
             <value>
             The cockpit view input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.ConcealPart">
+            <summary>
+            Gets the conceal part input.
+            </summary>
+            <value>
+            The conceal part input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.CustomCamera1">
@@ -8976,6 +9183,14 @@
             </summary>
             <value>
             The custom camera 4 input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.CycleConcealmentType">
+            <summary>
+            Gets the cycle concealment type input.
+            </summary>
+            <value>
+            The cycle concealment type input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.CycleTargetingMode">
@@ -9058,6 +9273,14 @@
             The flyby view input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.InvertConcealedParts">
+            <summary>
+            Gets the invert concealed parts input.
+            </summary>
+            <value>
+            The invert concealed parts input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.LandingGear">
             <summary>
             Gets or sets the landing gear input.
@@ -9080,6 +9303,14 @@
             </summary>
             <value>
             The load aircraft from clipboard URL input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.MaxThrottle">
+            <summary>
+            Gets the maximum throttle input.
+            </summary>
+            <value>
+            The maximum throttle input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.MirrorAircraftLeft">
@@ -9378,6 +9609,14 @@
             The toggle CoM/CoL/CoT input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.ToggleFastForward">
+            <summary>
+            Gets the toggle fast forward input.
+            </summary>
+            <value>
+            The toggle fast forward input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.ToggleMouseJoystick">
             <summary>
             Gets or sets the toggle mouse joystick input.
@@ -9394,12 +9633,36 @@
             The toggle music input.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.TogglePaintPanel">
+            <summary>
+            Gets or sets the toggle paint panel input.
+            </summary>
+            <value>
+            The toggle paint panel input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.TogglePartPropertiesPanel">
+            <summary>
+            Gets or sets the toggle part properties panel input.
+            </summary>
+            <value>
+            The toggle part properties panel input.
+            </value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.ToggleSlowMotion">
             <summary>
             Gets or sets the toggle slow motion input.
             </summary>
             <value>
             The toggle slow motion input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.ToggleTransformPartPanel">
+            <summary>
+            Gets or sets the toggle transform part panel input.
+            </summary>
+            <value>
+            The toggle transform part panel input.
             </value>
         </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.ToggleWindSettings">
@@ -9480,6 +9743,14 @@
             </summary>
             <value>
             The yaw input.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.ZeroThrottle">
+            <summary>
+            Gets the zero throttle input.
+            </summary>
+            <value>
+            The zero throttle input.
             </value>
         </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Mocks.GameInputsMock.FindById(System.String)">
@@ -10040,6 +10311,15 @@
             The root game object for all UI elements.
             </value>
         </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Mocks.UserInterfaceMock.CreateDesignerButton(UnityEngine.Sprite,System.String,System.Action)">
+            <summary>
+            Creates a designer button. Should be called when the designer is loaded.
+            </summary>
+            <param name="sprite">A square texture that will be shown on the button.</param>
+            <param name="tooltip">The tooltip that is shown when the mouse hovers over the button.</param>
+            <param name="callback">The callback that is run when the button is clicked.</param>
+            <returns>The designer button object.</returns>
+        </member>
         <member name="M:Jundroo.SimplePlanes.ModTools.Mocks.UserInterfaceMock.HideUIElement(Jundroo.SimplePlanes.ModTools.FlightUIElementType)">
             <summary>
             Hides the specified UI element (if shown).
@@ -10139,6 +10419,19 @@
             The order of the property.
             </value>
         </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyClassAttribute">
+            <summary>
+            An attribute used to flag a part modifier's field as being modifiable in the designer via a collection of
+            controls associated with the class fields that have also been marked with designer property attributes.
+            Implements the <see cref="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyAttribute" />
+            </summary>
+            <seealso cref="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyAttribute" />
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyClassAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyClassAttribute"/> class.
+            </summary>
+        </member>
         <member name="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySliderAttribute">
             <summary>
             An attribute used to flag a part modifier's field as being modifiable in the designer via a slider control.
@@ -10182,6 +10475,46 @@
             The number of steps for the slider.
             </value>
         </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextSpinnerAttribute">
+            <summary>
+            An attribute used to flag a part modifier's field as being modifiable in the designer via a text-based spinner control.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextSpinnerAttribute.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySpinnerAttribute"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextSpinnerAttribute.AllowManualEntry">
+            <summary>
+            Gets or sets a value indicating whether manual entry is allowed.
+            </summary>
+            <value><c>true</c> if manual entry is allowed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextSpinnerAttribute.ExtraWidth">
+            <summary>
+            Gets or sets the extra width added to the spinner control for longer label values.
+            </summary>
+            <value>The extra width added to the spinner control for longer label values.</value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextSpinnerAttribute.ShrinkText">
+            <summary>
+            Gets or sets a value indicating whether the value text can be shrunk to fit the label size.
+            </summary>
+            <value><c>true</c> if the value text can be shrunk to fit the label size; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextSpinnerAttribute.Values">
+            <summary>
+            Gets the values for the spinner property.
+            </summary>
+            <value>The values for the spinner property.</value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextSpinnerAttribute.WrapText">
+            <summary>
+            Gets or sets a value indicating whether the value text can be wrapped to a second line.
+            </summary>
+            <value><c>true</c> if the value text can be wrapped to a second line; otherwise, <c>false</c>.</value>
+        </member>
         <member name="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySpinnerAttribute">
             <summary>
             An attribute used to flag a part modifier's field as being modifiable in the designer via a spinner control.
@@ -10217,6 +10550,24 @@
             <param name="max">The maximum value of the spinner control.</param>
             <param name="stepSize">The size of each step (i.e. the amount added or subtracted each time the user activates a spinner button).</param>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySpinnerAttribute.AllowManualEntry">
+            <summary>
+            Gets or sets a value indicating whether manual entry is allowed.
+            </summary>
+            <value><c>true</c> if manual entry is allowed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySpinnerAttribute.ExtraWidth">
+            <summary>
+            Gets or sets the extra width added to the spinner control for longer label values.
+            </summary>
+            <value>The extra width added to the spinner control for longer label values.</value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySpinnerAttribute.ManualEntryIgnoresRange">
+            <summary>
+            Gets or sets a value indicating whether manual entry can bypass the enforment of min/max values.
+            </summary>
+            <value><c>true</c> if manual entry can bypass the enforment of min/max values; otherwise, <c>false</c>.</value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySpinnerAttribute.MaxValue">
             <summary>
             Gets or sets the maximum value.
@@ -10233,6 +10584,12 @@
             The minimum value.
             </value>
         </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySpinnerAttribute.ShrinkText">
+            <summary>
+            Gets or sets a value indicating whether the value text can be shrunk to fit the label size.
+            </summary>
+            <value><c>true</c> if the value text can be shrunk to fit the label size; otherwise, <c>false</c>.</value>
+        </member>
         <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySpinnerAttribute.StepSize">
             <summary>
             Gets or sets the size of each step (i.e. the amount added or subtracted each time the user activates a spinner button).
@@ -10240,6 +10597,12 @@
             <value>
             The size of each step (i.e. the amount added or subtracted each time the user activates a spinner button).
             </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertySpinnerAttribute.WrapText">
+            <summary>
+            Gets or sets a value indicating whether the value text can be wrapped to a second line.
+            </summary>
+            <value><c>true</c> if the value text can be wrapped to a second line; otherwise, <c>false</c>.</value>
         </member>
         <member name="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyLabelAttribute">
             <summary>
@@ -10250,6 +10613,36 @@
             <summary>
             Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyLabelAttribute" /> class.
             </summary>
+        </member>
+        <member name="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextInputAttribute">
+            <summary>
+            An attribute used to flag a part modifier's field as being displayed as a text input in the designer.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextInputAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextInputAttribute" /> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextInputAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextInputAttribute"/> class.
+            </summary>
+            <param name="supportsInputDialog">if set to <c>true</c> [supports input dialog].</param>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextInputAttribute.ExtraWidth">
+            <summary>
+            Gets or sets the extra width added to the text input control for longer values.
+            </summary>
+            <value>The extra width added to the text input control for longer values.</value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyTextInputAttribute.SupportsInputDialog">
+            <summary>
+            Gets a value indicating whether this text property supports the input dialog.
+            </summary>
+            <value>
+              <c>true</c> if [supports input dialog]; otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyToggleButtonAttribute">
             <summary>
@@ -10274,6 +10667,22 @@
             </summary>
             <value>
             The list of possible values to be cycled through.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyToggleButtonAttribute.SilenceEnumCountMismatch">
+            <summary>
+            Gets or sets a value indicating whether an error is thrown for mismatched count between specified values and enumeration.
+            </summary>
+            <value>
+              <c>true</c> if the error should be silenced; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.SimplePlanes.ModTools.Parts.Attributes.DesignerPropertyToggleButtonAttribute.AllowFunkyInput">
+            <summary>
+            Gets or sets a value indicating whether to allow funky input when ctrl clicking.
+            </summary>
+            <value>
+              <c>true</c> if [allow funky input]; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="T:Jundroo.SimplePlanes.ModTools.Parts.Attributes.PartModifierDesignerHeaderAttribute">
@@ -10558,7 +10967,7 @@
             The part categories.
             </summary>
         </member>
-        <member name="F:Jundroo.SimplePlanes.ModTools.Parts.PartCategories.Cockpits">
+        <member name="F:Jundroo.SimplePlanes.ModTools.Parts.PartCategories.CockpitBasic">
             <summary>
             The cockpits category.
             </summary>
@@ -10566,6 +10975,11 @@
         <member name="F:Jundroo.SimplePlanes.ModTools.Parts.PartCategories.Gizmos">
             <summary>
             The gizmos category.
+            </summary>
+        </member>
+        <member name="F:Jundroo.SimplePlanes.ModTools.Parts.PartCategories.CockpitInterior">
+            <summary>
+            The interiors category.
             </summary>
         </member>
         <member name="F:Jundroo.SimplePlanes.ModTools.Parts.PartCategories.LandingGear">
@@ -12696,6 +13110,14 @@
             The current ammo count for the weapon.
             </value>
         </member>
+        <member name="P:Assets.Game.Weapons.IWeapon.CustomName">
+            <summary>
+            Gets the custom name of the weapon set by the user.
+            </summary>
+            <value>
+            The custom name.
+            </value>
+        </member>
         <member name="P:Assets.Game.Weapons.IWeapon.CurrentTarget">
             <summary>
             Gets or sets the current target for the weapon.
@@ -12846,6 +13268,11 @@
         <member name="F:Assets.Game.Weapons.WeaponType.Rocket">
             <summary>
             A single rocket type weapon
+            </summary>
+        </member>
+        <member name="F:Assets.Game.Weapons.WeaponType.Cannon">
+            <summary>
+            A cannon type weapon.
             </summary>
         </member>
     </members>

@@ -742,6 +742,11 @@
             Update the projects tags to use the same tags as SimplePlanes
             </summary>
         </member>
+        <member name="M:Jundroo.SimplePlanes.ModTools.Editor.ModBuilderWindowPlugin.UpdateXRRendering">
+            <summary>
+            Updates the XR Rendering settings.
+            </summary>
+        </member>
         <member name="T:Jundroo.SimplePlanes.ModTools.Editor.PartEditor">
             <summary>
             A custom editor for parts.
